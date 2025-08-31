@@ -49,14 +49,8 @@ h1 {
 .filters {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.filter-group {
-  flex: 1;
-  min-width: 150px;
 }
 
 .filter-group h3 {
@@ -83,7 +77,6 @@ h1 {
   transform: scale(1.1);
 }
 
-/* Activity list */
 .activity-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -95,34 +88,30 @@ h1 {
   padding: 15px;
   background-color: #ecf0f1;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, filter 0.2s;
+  color: #2c3e50;
 }
 
 .activity-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  filter: brightness(1.05);
 }
 
 .activity-card h4 {
   margin-top: 0;
-  color: #2c3e50;
 }
 
 .activity-card p {
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
-/* Card colors based on first tag */
-.activity-card[data-first-tag="READ"] { background-color: #ffe0e0; }
-.activity-card[data-first-tag="VOCABULARY"] { background-color: #e0f7ff; }
-.activity-card[data-first-tag="WRITING"] { background-color: #fff3e0; }
-.activity-card[data-first-tag="CREATIVE WRITING"] { background-color: #fff8e1; }
-.activity-card[data-first-tag="VISUAL ART"] { background-color: #e0ffe0; }
-.activity-card[data-first-tag="INTRODUCE"] { background-color: #fce4ec; }
-.activity-card[data-first-tag="ANALYZE"] { background-color: #f3e5f5; }
-.activity-card[data-first-tag="PRE-ASSESSMENT"] { background-color: #fff9c4; }
-.activity-card[data-first-tag="FORMATIVE"] { background-color: #c8e6c9; }
-.activity-card[data-first-tag="REVIEW"] { background-color: #b3e5fc; }
-.activity-card[data-first-tag="EVALUATE"] { background-color: #ffccbc; }
-.activity-card[data-first-tag="SUMMATIVE"] { background-color: #d1c4e9; }
-.activity-card[data-first-tag="CLOSING"] { background-color: #f0f4c3; }
+.activity-tags {
+  color: #555;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+/* Card background colors by first tag category */
+.bg-TYPE { background-color: #ffcccc; }
+.bg-GENRE { background-color: #cce5ff; }
+.bg-MISC { background-color: #ccffcc; }
