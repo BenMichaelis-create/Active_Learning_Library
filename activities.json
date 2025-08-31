@@ -123,7 +123,7 @@
     "Description": "Instructor lists out one or more concepts, for which students must come up with an antonym, and then defend their choice",
     "TYPE": "ANALYZE",
     "GENRE": "DISCUSSION",
-    "Misc": "Vocabulary"
+    "Misc": "VOCABULARY"
   },
   {
     "Activity Name": "What/How/Why Outlines",
@@ -137,7 +137,7 @@
     "Description": "Students provide the second half of an analogy (A is to B as X is to Y)",
     "TYPE": "ANALYZE",
     "GENRE": "READ",
-    "Misc": "Vocabulary"
+    "Misc": "VOCABULARY"
   },
   {
     "Activity Name": "Problem Recognition Tasks",
@@ -200,21 +200,21 @@
     "Description": "Students write a brief essay in which they evaluate to what extent their work fulfills an assignment?s objectives",
     "TYPE": "EVALUATE",
     "GENRE": "WRITING",
-    "Misc": "EVALUTATE"
+    "Misc": "EVALUATE"
   },
   {
     "Activity Name": "Exam Evaluations",
     "Description": "Students explain what they are learning from exams, and evaluate the fairness, usefulness, and quality of tests",
     "TYPE": "EVALUATE",
     "GENRE": "WRITING",
-    "Misc": "EVALUTATE"
+    "Misc": "EVALUATE"
   },
   {
     "Activity Name": "Writing Fables",
     "Description": "Students write an animal fable (or at least sketch its outline) that will lead to a one-sentence moral matching the current concept discussed in class. May be done verbally instead",
     "TYPE": "EVALUATE",
     "GENRE": "CREATIVE WRITING",
-    "Misc": "EVALUTATE"
+    "Misc": "EVALUATE"
   },
   {
     "Activity Name": "Make it a Story",
@@ -632,14 +632,14 @@
   {
     "Activity Name": "Student Videos",
     "Description": "Student projects, presentations, or speeches can take the form of video instead of PowerPoint, and uploaded for the class to see",
-    "TYPE": "EVALUTATE",
+    "TYPE": "EVALUATE",
     "GENRE": "CREATIVE WRITING",
     "Misc": "HOME WORK"
   },
   {
     "Activity Name": "Closed Eyes Method",
     "Description": "To prevent students at home from ?reading\" presentations (such as poem recitations) that were supposed to be memorized for YouTube upload, require them to give the performance with their eyes closed",
-    "TYPE": "EVALUTATE",
+    "TYPE": "EVALUATE",
     "GENRE": "CREATIVE WRITING",
     "Misc": "HOME WORK"
   },
@@ -660,7 +660,7 @@
   {
     "Activity Name": "Shared Account",
     "Description": "Instructor creates a generic YouTube username/account and gives the password to everyone in the class, so student uploads all go to the same place",
-    "TYPE": "EVALUTATE",
+    "TYPE": "EVALUATE",
     "GENRE": "VISUAL ART",
     "Misc": ""
   },
