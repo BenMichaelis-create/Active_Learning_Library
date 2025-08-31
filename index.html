@@ -104,17 +104,17 @@ const tags = [
   "DISCUSSION","Games","Icebreakers","Forming Groups"
 ];
 
-// Create tag buttons
-const tagContainer = document.getElementById("tagButtons");
-tags.forEach(tag => {
-  const btn = document.createElement("button");
-  btn.innerText = tag;
-  btn.onclick = () => {
+// Hook into existing buttons and enable toggling
+const allTagButtons = document.querySelectorAll(".tags-section button");
+allTagButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
     btn.classList.toggle("active");
-    currentTags = Array.from(document.querySelectorAll(".tags-section button.active")).map(b => b.innerText);
-  };
-  tagContainer.appendChild(btn);
+    // Update currentTags array
+    currentTags = Array.from(document.querySelectorAll(".tags-section button.active"))
+                       .map(b => b.innerText);
+  });
 });
+
 
 // Load activities JSON and convert to expected structure
 fetch('activities.json')
@@ -198,6 +198,7 @@ fetch('activities.json')
 
 </body>
 </html>
+
 
 
 
