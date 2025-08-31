@@ -1,98 +1,99 @@
-let activities = [];
-const typeTags = ["OPENING","INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","SUMMATIVE","CLOSING"];
-const genreTags = ["READ","VOCABULARY","WRITING (Short)","WRITING (creative)","Visual Art"];
-const miscTags = ["On Your Feet","Home Connection","Games","Ice Breaker","Making Groups"];
+// Canonical tag lists
+const canonicalTags = {
+  Type: ["OPENING","INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","SUMMATIVE","CLOSING"],
+  Genre: ["READ","VOCABULARY","WRITING (Short)","WRITING (creative)","Visual Art"],
+  Misc: ["On Your Feet","Home Connection","Games","Ice Breaker","Making Groups"]
+};
 
+let activities = [];
+let selectedTags = { Type: [], Genre: [], Misc: [] };
+
+// Load JSON
 fetch('activities.json')
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => {
     activities = data;
-    createTagButtons();
+    generateTagButtons();
     displayActivities(activities);
-  })
-  .catch(err => console.error('Error loading JSON:', err));
-
-function createTagButtons() {
-  const typeContainer = document.getElementById('typeFilters');
-  const genreContainer = document.getElementById('genreFilters');
-  const miscContainer = document.getElementById('miscFilters');
-
-  typeTags.forEach(tag => {
-    const t = document.createElement('span');
-    t.className = 'tag';
-    t.textContent = tag;
-    typeContainer.appendChild(t);
   });
 
-  genreTags.forEach(tag => {
-    const t = document.createElement('span');
-    t.className = 'tag';
-    t.textContent = tag;
-    genreContainer.appendChild(t);
-  });
+// Normalize tag to canonical list or Misc
+function normalizeTag(tag, category) {
+  tag = tag.trim().toUpperCase();
+  if(canonicalTags[category].includes(tag)) return tag;
+  return tag; // Any unknown will still appear in Misc
+}
 
-  miscTags.forEach(tag => {
-    const t = document.createElement('span');
-    t.className = 'tag';
-    t.textContent = tag;
-    miscContainer.appendChild(t);
-  });
+// Generate clickable tag buttons
+function generateTagButtons() {
+  ["Type","Genre","Misc"].forEach(cat => {
+    const container = document.getElementById(cat.toLowerCase() + "Filters");
+    const allTags = new Set();
 
-  // Tag click toggle
-  document.querySelectorAll('.tag').forEach(tag => {
-    tag.addEventListener('click', () => {
-      tag.classList.toggle('selected');
+    activities.forEach(act => {
+      const val = act[cat] || "";
+      if(val) allTags.add(val.trim());
+    });
+
+    const sortedTags = Array.from(allTags).sort();
+    sortedTags.forEach(tag => {
+      const button = document.createElement('span');
+      button.className = "tag-button";
+      button.textContent = tag;
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        if(selectedTags[cat].includes(tag)) {
+          selectedTags[cat] = selectedTags[cat].filter(t => t !== tag);
+        } else {
+          selectedTags[cat].push(tag);
+        }
+      });
+      container.appendChild(button);
     });
   });
 }
 
+// Display activities
 function displayActivities(list) {
   const container = document.getElementById('activityList');
-  container.innerHTML = '';
+  container.innerHTML = "";
 
   list.forEach(act => {
     const card = document.createElement('div');
-    card.className = 'activity-card';
-    card.innerHTML = `
-      <h4>${act['Activity Name'] || 'No Name'}</h4>
-      <p>${act['Description'] || ''}</p>
-      <p><strong>Type:</strong> ${act['TYPE'] || 'N/A'}</p>
-      <p><strong>Genre:</strong> ${act['GENRE'] || 'N/A'}</p>
-      <p><strong>Misc:</strong> ${act['Misc'] || 'N/A'}</p>
-    `;
+    const typeClass = "type-" + (canonicalTags.Type.includes(act.TYPE) ? act.TYPE : "UNKNOWN");
+    card.className = `activity-card ${typeClass}`;
+    
+    const title = document.createElement('h3');
+    title.textContent = act["Activity Name"] || "Unnamed Activity";
+    const desc = document.createElement('p');
+    desc.textContent = act.Description || "";
+
+    card.appendChild(title);
+    card.appendChild(desc);
     container.appendChild(card);
   });
 }
 
-function filterActivities() {
-  const searchValue = document.getElementById('searchInput').value.toLowerCase();
-
-  const selectedTypes = Array.from(document.querySelectorAll('#typeFilters .tag.selected')).map(t => t.textContent);
-  const selectedGenres = Array.from(document.querySelectorAll('#genreFilters .tag.selected')).map(t => t.textContent);
-  const selectedMiscs = Array.from(document.querySelectorAll('#miscFilters .tag.selected')).map(t => t.textContent);
-
+// Tag filter Go button
+document.getElementById("tagFilterButton").addEventListener("click", () => {
   const filtered = activities.filter(act => {
-    const matchesSearch = act['Activity Name'].toLowerCase().includes(searchValue) ||
-                          (act['TYPE'] && act['TYPE'].toLowerCase().includes(searchValue)) ||
-                          (act['GENRE'] && act['GENRE'].toLowerCase().includes(searchValue)) ||
-                          (act['Misc'] && act['Misc'].toLowerCase().includes(searchValue));
-
-    const matchesType = selectedTypes.length === 0 || selectedTypes.includes(act['TYPE']);
-    const matchesGenre = selectedGenres.length === 0 || selectedGenres.includes(act['GENRE']);
-    const matchesMisc = selectedMiscs.length === 0 || selectedMiscs.includes(act['Misc']) ||
-                        (!miscTags.includes(act['Misc'])); // catch-all any unknown misc
-
-    return matchesSearch && matchesType && matchesGenre && matchesMisc;
+    return ["Type","Genre","Misc"].every(cat => {
+      if(selectedTags[cat].length === 0) return true;
+      const val = act[cat] || "";
+      return selectedTags[cat].some(tag => val.toUpperCase() === tag.toUpperCase());
+    });
   });
-
   displayActivities(filtered);
-}
-
-// Button events
-document.getElementById('searchButton').addEventListener('click', () => {
-  filterActivities(); // search input
 });
 
-document.getElementById('goButton').addEventListener('click', () => {
-  filterActivities(); // tag filters
+// Search button
+document.getElementById("searchButton").addEventListener("click", () => {
+  const term = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = activities.filter(act => {
+    const name = act["Activity Name"]?.toLowerCase() || "";
+    const desc = act.Description?.toLowerCase() || "";
+    const tags = [act.TYPE, act.GENRE, act.Misc].join(" ").toLowerCase();
+    return name.includes(term) || desc.includes(term) || tags.includes(term);
+  });
+  displayActivities(filtered);
 });
