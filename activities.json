@@ -179,7 +179,7 @@
     "Description": "Students are assigned to use a smartphone to snap a picture of something at home (or out in the city) that captures a specific concept from the class, as assigned by the teacher",
     "TYPE": "ANALYZE",
     "GENRE": "VISUAL ART",
-    "Misc": "Homework"
+    "Misc": "HOME WORK"
   },
   {
     "Activity Name": "Board of Artwork",
@@ -228,7 +228,7 @@
     "Description": "Give an envelope to every student. Inside are cut-up strips of paper with the topics/principles they should know about already. They divide into two piles: things they know well, and things they need help with. Then they debrief with nearby students on things any of them need help with",
     "TYPE": "PRE-ASSESSMENT",
     "GENRE": "HOME WORK",
-    "Misc": "Start of Year"
+    "Misc": "INTRODUCE"
   },
   {
     "Activity Name": "Total Physical Response (TPR)",
