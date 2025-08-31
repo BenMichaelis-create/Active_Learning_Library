@@ -6,13 +6,14 @@ body {
 }
 
 .container {
+  width: 90%;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 20px auto;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .search-bar {
@@ -23,73 +24,88 @@ h1 {
 
 .search-bar input {
   width: 60%;
-  padding: 10px;
+  padding: 8px;
   font-size: 16px;
 }
 
 .search-bar button {
-  padding: 10px 20px;
-  margin-left: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-left: 5px;
   cursor: pointer;
 }
 
 .filters {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 20px;
-  align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .filter-group {
-  margin-right: 20px;
+  flex: 1;
+  min-width: 150px;
+  margin: 5px;
 }
 
 .filter-group h3 {
-  margin: 0 0 5px 0;
+  margin-bottom: 5px;
 }
 
-.tag {
+.tag-button {
   display: inline-block;
-  background: #e0e0e0;
-  padding: 5px 10px;
   margin: 3px;
+  padding: 5px 10px;
   border-radius: 5px;
+  background-color: #e0e0e0;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.tag:hover {
+.tag-button:hover {
   transform: scale(1.1);
 }
 
-.tag.selected {
-  background: #007bff;
+.tag-button.active {
+  background-color: #4a90e2;
   color: white;
 }
 
-.filter-go {
-  padding: 7px 15px;
-  cursor: pointer;
-}
-
 .activity-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .activity-card {
-  background: white;
+  background-color: #fff;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  width: 100%;
 }
 
-.activity-card h4 {
-  margin-top: 0;
+@media(min-width: 600px) {
+  .activity-card {
+    width: calc(50% - 10px);
+  }
 }
 
-.activity-card p {
-  margin: 5px 0;
+@media(min-width: 900px) {
+  .activity-card {
+    width: calc(33.33% - 10px);
+  }
 }
+
+/* Colors for each Type */
+.type-OPENING { border-left: 6px solid #FF6B6B; }
+.type-INTRODUCE { border-left: 6px solid #FFB86B; }
+.type-PRE-ASSESSMENT { border-left: 6px solid #FFD56B; }
+.type-READ { border-left: 6px solid #6BD5FF; }
+.type-ANALYZE { border-left: 6px solid #6BFF95; }
+.type-REVIEW { border-left: 6px solid #A36BFF; }
+.type-EVALUATE { border-left: 6px solid #FF6BD3; }
+.type-FORMATIVE { border-left: 6px solid #FF9B6B; }
+.type-SUMMATIVE { border-left: 6px solid #6BFFF0; }
+.type-CLOSING { border-left: 6px solid #FF6B6B; }
+.type-UNKNOWN { border-left: 6px solid #B0B0B0; }
