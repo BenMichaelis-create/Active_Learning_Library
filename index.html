@@ -25,7 +25,58 @@
 </div>
 
 <!-- Tag Buttons -->
-<div class="tags-section" id="tagButtons"></div>
+<div class="tags-section" id="tagButtons">
+
+  <h3>Stage (Academic Goal / Purpose)</h3>
+  <div class="tag-group" id="layer1">
+    <button>PRE-ASSESSMENT</button>
+    <button>INTRODUCE</button>
+    <button>READ</button>
+    <button>ANALYZE</button>
+    <button>REVIEW</button>
+    <button>EVALUATE</button>
+  </div>
+
+  <h3>Genre / Focus - Literary</h3>
+  <div class="tag-group" id="layer2-literary">
+    <button>LONG TEXT</button>
+    <button>SHORT TEXT</button>
+    <button>POETRY</button>
+    <button>VISUAL ART</button>
+  </div>
+
+  <h3>Genre / Focus - Informational</h3>
+  <div class="tag-group" id="layer2-info">
+    <button>SPEECH</button>
+    <button>ARTICLE / ESSAY</button>
+    <button>VISUAL ART / MEDIA</button>
+  </div>
+
+  <h3>Mechanics</h3>
+  <div class="tag-group" id="layer2-mech">
+    <button>VOCABULARY</button>
+    <button>GRAMMAR</button>
+    <button>PUNCTUATION</button>
+  </div>
+
+  <h3>Production / Creation Type</h3>
+  <div class="tag-group" id="layer3">
+    <button>WRITING (short)</button>
+    <button>WRITING (long)</button>
+    <button>WRITING (creative)</button>
+    <button>DISCUSSION</button>
+    <button>VISUAL ART</button>
+  </div>
+
+  <h3>Miscellaneous</h3>
+  <div class="tag-group" id="layer4">
+    <button>Games</button>
+    <button>Icebreakers</button>
+    <button>Forming Groups</button>
+  </div>
+
+</div>
+
 <div class="buttons">
   <button onclick="filterByTags()">Go (Tags)</button>
   <button onclick="pickRandomActivities()">Re-roll</button>
@@ -147,6 +198,7 @@ fetch('activities.json')
 
 </body>
 </html>
+
 
 
 
