@@ -1,34 +1,117 @@
-function displayActivities(list) {
-  const container = document.getElementById("activityList");
-  container.innerHTML = "";
-
-  list.forEach(a => {
-    const card = document.createElement("div");
-    card.classList.add("activity-card");
-
-    // Determine background color based on first existing tag
-    let bgColor = "#ecf0f1"; // default light gray
-    if (a["TYPE"]) bgColor = "#ffcccc";       // light red
-    else if (a["GENRE"]) bgColor = "#cce5ff"; // light blue
-    else if (a["MISC"]) bgColor = "#ccffcc";  // light green
-    card.style.backgroundColor = bgColor;
-
-    const title = document.createElement("h4");
-    title.textContent = a["Activity Name"];
-    card.appendChild(title);
-
-    const desc = document.createElement("p");
-    desc.textContent = a["Description"];
-    card.appendChild(desc);
-
-    // Show all tags in small light-grey text
-    const tagLine = document.createElement("p");
-    tagLine.style.color = "#555"; // slightly darker grey for readability
-    tagLine.style.fontSize = "0.8em";
-    const tags = [a["TYPE"], a["GENRE"], a["MISC"]].filter(Boolean);
-    tagLine.textContent = tags.join(" • ");
-    card.appendChild(tagLine);
-
-    container.appendChild(card);
-  });
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #2980b9;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-group h3 {
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.filter-group button {
+  margin: 3px;
+  padding: 5px 10px;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-group button.selected {
+  background-color: #3498db;
+  color: white;
+}
+
+.filter-group button:hover {
+  transform: scale(1.1);
+}
+
+.activity-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.activity-card {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, filter 0.2s;
+  color: #2c3e50;
+}
+
+.activity-card:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+.activity-card h4 {
+  margin-top: 0;
+}
+
+.activity-card p {
+  margin-bottom: 5px;
+}
+
+.activity-tags {
+  color: #555;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+/* Card background colors by first tag category */
+.bg-TYPE { background-color: #ffcccc; }
+.bg-GENRE { background-color: #cce5ff; }
+.bg-MISC { background-color: #ccffcc; }
