@@ -1,149 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Activity Tags Dashboard</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h2 { margin-top: 40px; }
-    ul { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; }
-    li { 
-      background: #f0f0f0; 
-      margin: 5px; 
-      padding: 5px 10px; 
-      border-radius: 4px; 
-      cursor: pointer; 
-      transition: 0.2s; 
-    }
-    li:hover { background: #d0d0d0; }
-    li.active { background: #87ceeb; color: white; }
-    .activity { 
-      border: 1px solid #ccc; 
-      margin: 5px 0; 
-      padding: 10px; 
-      border-radius: 4px; 
-    }
-    .category-header { font-weight: bold; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Explorer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1>Activity Explorer</h1>
 
-<h1>Activity Tags Dashboard</h1>
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search activities or tags..." />
+      <button id="searchButton">Go</button>
+    </div>
 
-<h2>Type</h2>
-<ul id="type-list"></ul>
+    <!-- Filters -->
+    <div class="filters">
+      <div class="filter-group" id="typeFilters">
+        <h3>Type</h3>
+      </div>
+      <div class="filter-group" id="genreFilters">
+        <h3>Genre</h3>
+      </div>
+      <div class="filter-group" id="miscFilters">
+        <h3>Misc</h3>
+      </div>
+    </div>
 
-<h2>Genre</h2>
-<ul id="genre-list"></ul>
+    <!-- Results -->
+    <div id="activityList" class="activity-list"></div>
+  </div>
 
-<h2>Misc</h2>
-<ul id="misc-list"></ul>
-
-<h2>Activities</h2>
-<div id="activities-list"></div>
-
-<script>
-const jsonData = [
-  {
-    "Activity Name": "Choral Response",
-    "Description": "Ask a one-word answer to the class at large.",
-    "TYPE": "READ",
-    "GENRE": "VOCABULARY",
-    "Misc": "On Your Feet"
-  },
-  {
-    "Activity Name": "Word Cloud Guessing",
-    "Description": "Show a word cloud and challenge students to guess the topic.",
-    "TYPE": "INTRODUCE",
-    "GENRE": "DISCUSSION",
-    "Misc": "Opening"
-  }
-  // Add your full JSON data here
-];
-
-// Predefined tags
-const predefined = {
-  Type: ["Opening", "Introduce", "Pre-ASSESSMENT", "READ", "ANALYZE", "REVIEW", "EVALUATE", "FORMATIVE", "SUMMATIVE", "Closing"],
-  Genre: ["READ", "VOCABULARY", "WRITING (Short)", "WRITING (Creative)", "Visual Art"],
-  Misc: ["Games", "Ice Breaker", "Making Groups"]
-};
-
-const typeSet = new Set();
-const genreSet = new Set();
-const miscSet = new Set();
-
-function normalizeTag(tag) { return tag ? tag.trim().toUpperCase() : ""; }
-
-jsonData.forEach(item => {
-  let type = normalizeTag(item.TYPE);
-  const foundType = predefined.Type.find(t => t.toUpperCase() === type);
-  if(foundType) typeSet.add(foundType); else if(item.TYPE) miscSet.add(item.TYPE);
-
-  let genre = normalizeTag(item.GENRE);
-  const foundGenre = predefined.Genre.find(g => g.toUpperCase() === genre);
-  if(foundGenre) genreSet.add(foundGenre); else if(item.GENRE) miscSet.add(item.GENRE);
-
-  if(item.Misc && item.Misc.trim() !== "") miscSet.add(item.Misc);
-});
-
-const selectedTags = new Set();
-
-function populateList(set, elementId){
-  const ul = document.getElementById(elementId);
-  Array.from(set).sort().forEach(tag => {
-    const li = document.createElement("li");
-    li.textContent = tag;
-    li.addEventListener("click", () => toggleTag(li, tag));
-    ul.appendChild(li);
-  });
-}
-
-function toggleTag(element, tag){
-  if(selectedTags.has(tag)){
-    selectedTags.delete(tag);
-    element.classList.remove("active");
-  } else {
-    selectedTags.add(tag);
-    element.classList.add("active");
-  }
-  filterActivities();
-}
-
-function displayActivities(activities){
-  const container = document.getElementById("activities-list");
-  container.innerHTML = "";
-  activities.forEach(act => {
-    const div = document.createElement("div");
-    div.className = "activity";
-    div.innerHTML = `<strong>${act["Activity Name"]}</strong><br>${act.Description}<br>
-                     <span class="category-header">Type:</span> ${act.TYPE} | 
-                     <span class="category-header">Genre:</span> ${act.GENRE} | 
-                     <span class="category-header">Misc:</span> ${act.Misc}`;
-    container.appendChild(div);
-  });
-}
-
-function filterActivities(){
-  if(selectedTags.size === 0){
-    displayActivities(jsonData);
-    return;
-  }
-  const filtered = jsonData.filter(act => {
-    for(let tag of selectedTags){
-      if(act.TYPE !== tag && act.GENRE !== tag && act.Misc !== tag){
-        return false;
-      }
-    }
-    return true;
-  });
-  displayActivities(filtered);
-}
-
-populateList(typeSet, "type-list");
-populateList(genreSet, "genre-list");
-populateList(miscSet, "misc-list");
-displayActivities(jsonData);
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
