@@ -3,14 +3,14 @@ let activities = [];
 let selectedTags = { Type: [], Genre: [], Misc: [] };
 
 const typeTags = [
-  "OPENING","INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW",
-  "EVALUATE","FORMATIVE","SUMMATIVE","CLOSING"
+  "INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW",
+  "EVALUATE","FORMATIVE","CLOSING"
 ];
 const genreTags = [
-  "READ","VOCABULARY","WRITING (Short)","WRITING (creative)","Visual Art"
+  "READ","VOCABULARY","WRITING"," CREATIVE WRITING","VISUAL ART"
 ];
 const miscTags = [
-  "On Your Feet","Home Connection","Games","Ice Breaker","Making Groups"
+  "ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"
 ];
 
 async function loadActivities() {
@@ -100,7 +100,7 @@ function displayActivities(list) {
     card.classList.add("activity-card");
 
     // Assign color by most prominent tag (Type > Genre > Misc)
-    let tagColor = "lightgray";
+    let tagColor = "lightorange";
     if (a["TYPE"]) tagColor = "lightcoral";
     else if (a["GENRE"]) tagColor = "lightblue";
     else if (a["Misc"]) tagColor = "lightgreen";
