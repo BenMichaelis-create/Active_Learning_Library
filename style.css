@@ -49,8 +49,14 @@ h1 {
 .filters {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 150px;
 }
 
 .filter-group h3 {
@@ -77,26 +83,7 @@ h1 {
   transform: scale(1.1);
 }
 
-.go-button-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.go-button-container button {
-  padding: 10px 30px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  background-color: #e67e22;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.go-button-container button:hover {
-  background-color: #d35400;
-}
-
+/* Activity list */
 .activity-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -108,11 +95,12 @@ h1 {
   padding: 15px;
   background-color: #ecf0f1;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .activity-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .activity-card h4 {
@@ -124,15 +112,17 @@ h1 {
   margin-bottom: 0;
 }
 
-.card-READ { background-color: #ffe0e0; }
-.card-VOCABULARY { background-color: #e0f7ff; }
-.card-WRITING { background-color: #fff3e0; }
-.card-Visual { background-color: #e0ffe0; }
-.card-INTRODUCE { background-color: #fce4ec; }
-.card-ANALYZE { background-color: #f3e5f5; }
-.card-PRE-ASSESSMENT { background-color: #fff9c4; }
-.card-FORMATIVE { background-color: #c8e6c9; }
-.card-REVIEW { background-color: #b3e5fc; }
-.card-EVALUATE { background-color: #ffccbc; }
-.card-SUMMATIVE { background-color: #d1c4e9; }
-.card-CLOSING { background-color: #f0f4c3; }
+/* Card colors based on first tag */
+.activity-card[data-first-tag="READ"] { background-color: #ffe0e0; }
+.activity-card[data-first-tag="VOCABULARY"] { background-color: #e0f7ff; }
+.activity-card[data-first-tag="WRITING"] { background-color: #fff3e0; }
+.activity-card[data-first-tag="CREATIVE WRITING"] { background-color: #fff8e1; }
+.activity-card[data-first-tag="VISUAL ART"] { background-color: #e0ffe0; }
+.activity-card[data-first-tag="INTRODUCE"] { background-color: #fce4ec; }
+.activity-card[data-first-tag="ANALYZE"] { background-color: #f3e5f5; }
+.activity-card[data-first-tag="PRE-ASSESSMENT"] { background-color: #fff9c4; }
+.activity-card[data-first-tag="FORMATIVE"] { background-color: #c8e6c9; }
+.activity-card[data-first-tag="REVIEW"] { background-color: #b3e5fc; }
+.activity-card[data-first-tag="EVALUATE"] { background-color: #ffccbc; }
+.activity-card[data-first-tag="SUMMATIVE"] { background-color: #d1c4e9; }
+.activity-card[data-first-tag="CLOSING"] { background-color: #f0f4c3; }
