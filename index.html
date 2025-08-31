@@ -23,7 +23,7 @@
       padding: 10px; 
       border-radius: 4px; 
     }
-    .category-header { margin-top: 20px; font-weight: bold; }
+    .category-header { font-weight: bold; }
   </style>
 </head>
 <body>
@@ -58,7 +58,7 @@ const jsonData = [
     "GENRE": "DISCUSSION",
     "Misc": "Opening"
   }
-  // Add all your JSON activities here
+  // Add your full JSON data here
 ];
 
 // Predefined tags
@@ -68,12 +68,10 @@ const predefined = {
   Misc: ["Games", "Ice Breaker", "Making Groups"]
 };
 
-// Sets for unique tags
 const typeSet = new Set();
 const genreSet = new Set();
 const miscSet = new Set();
 
-// Normalize
 function normalizeTag(tag) { return tag ? tag.trim().toUpperCase() : ""; }
 
 jsonData.forEach(item => {
@@ -88,18 +86,29 @@ jsonData.forEach(item => {
   if(item.Misc && item.Misc.trim() !== "") miscSet.add(item.Misc);
 });
 
-// Populate lists
+const selectedTags = new Set();
+
 function populateList(set, elementId){
   const ul = document.getElementById(elementId);
   Array.from(set).sort().forEach(tag => {
     const li = document.createElement("li");
     li.textContent = tag;
-    li.addEventListener("click", () => filterActivities(tag));
+    li.addEventListener("click", () => toggleTag(li, tag));
     ul.appendChild(li);
   });
 }
 
-// Display all activities initially
+function toggleTag(element, tag){
+  if(selectedTags.has(tag)){
+    selectedTags.delete(tag);
+    element.classList.remove("active");
+  } else {
+    selectedTags.add(tag);
+    element.classList.add("active");
+  }
+  filterActivities();
+}
+
 function displayActivities(activities){
   const container = document.getElementById("activities-list");
   container.innerHTML = "";
@@ -114,15 +123,22 @@ function displayActivities(activities){
   });
 }
 
-// Filter activities by tag
-function filterActivities(tag){
-  const filtered = jsonData.filter(act => 
-    act.TYPE === tag || act.GENRE === tag || act.Misc === tag
-  );
+function filterActivities(){
+  if(selectedTags.size === 0){
+    displayActivities(jsonData);
+    return;
+  }
+  const filtered = jsonData.filter(act => {
+    for(let tag of selectedTags){
+      if(act.TYPE !== tag && act.GENRE !== tag && act.Misc !== tag){
+        return false;
+      }
+    }
+    return true;
+  });
   displayActivities(filtered);
 }
 
-// Initialize
 populateList(typeSet, "type-list");
 populateList(genreSet, "genre-list");
 populateList(miscSet, "misc-list");
