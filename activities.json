@@ -2,953 +2,953 @@
   {
     "Activity Name": "Choral Response",
     "Description": "Ask a one-word answer to the class at large; volume of answer will suggest degree of comprehension. Very useful to ?drill? new vocabulary words into students. (Add a little action in there to help with comprehension!)",
-    "Stage (Layer 1)": "READ",
-    "Genre/Production (Layer 2/3)": "VOCABULARY",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "READ",
+    "GENRE": "VOCABULARY",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Word Cloud Guessing",
     "Description": "Before you introduce a new concept to students, show them a word cloud on that topic, using an online generator (Wordle, Taxedo, or Tagul) to paste a paragraph or longer of related text, and challenge students to guess what the topic was",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Opening"
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": "Opening"
   },
   {
     "Activity Name": "Instructor Illustrates Concept",
     "Description": "Instructor illustrates a concept, idea, or principle with a real-life application, model, or case-study",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": "CLOSING"
   },
   {
     "Activity Name": "Socratic Questioning",
     "Description": "The instructor replaces lecture by peppering students with questions, always asking the next question in a way that guides the conversation toward a learning outcome (or major Driving Question) that was desired from the beginning",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "CLOSING"
   },
   {
     "Activity Name": "Reverse Socratic Questioning",
     "Description": "The instructor requires students to ask him/her questions, and the instructor answers in such a way as to goad another question immediately but also drive the next student question in a certain direction",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "CLOSING"
   },
   {
     "Activity Name": "Pass the Pointer",
     "Description": "Place a complex, intricate, or detailed image on the screen and ask for volunteers to temporarily borrow the laser pointer to identify key features or ask questions about items they don?t understand",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Visual Art"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "Visual Art"
   },
   {
     "Activity Name": "Turn My Back",
     "Description": "Face away from the class, ask for a show of hands for how many people did the reading. After they put hands down, turn around again and ask to hear a report of the percentage. This provides an indication of student preparation for today?s material",
-    "Stage (Layer 1)": "PRE-ASSESSMENT",
-    "Genre/Production (Layer 2/3)": "READING",
-    "Miscellaneous Tags": ""
+    "TYPE": "PRE-ASSESSMENT",
+    "GENRE": "READING",
+    "Misc": "OPENING"
   },
   {
     "Activity Name": "Empty Outlines",
     "Description": "Distribute a partially completed outline of today?s lecture and ask students to fill it in. Useful at start or at end of class.",
-    "Stage (Layer 1)": "READ",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": "Start of Class"
+    "TYPE": "READ",
+    "GENRE": "",
+    "Misc": "Start of Class"
   },
   {
     "Activity Name": "Student Polling",
     "Description": "Select some students to travel the room, polling the others on a topic relevant to the course, then report back the results for everyone",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "FORMATIVE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Quote Minus One",
     "Description": "Provide a quote relevant to your topic but leave out a crucial word and ask students to guess what it might be: ?I cannot forecast to you the action of ______; it is a riddle, wrapped in a mystery, inside an enigma.? This engages them quickly in a topic and makes them feel invested",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "READING",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "READING",
+    "Misc": "OPENING"
   },
   {
     "Activity Name": "Everyday Ethical Dilemmas",
     "Description": "Present an abbreviated case study with an ethical dilemma related to the discipline being studied",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": "OPENING"
   },
   {
     "Activity Name": "Pop Culture",
     "Description": "Infuse your lectures, case studies, sample word problems for use during class with current events from the pop culture world. Rather than citing statistics for housing construction, illustrate the same concept with something students care about",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": "OPENING"
   },
   {
     "Activity Name": "Make Them Guess",
     "Description": "Introduce a new subject by asking an intriguing question, something that few will know the answer to (but should interest all of them). Accept blind guessing for a while before giving the answer to build curiosity",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": "OPENING"
   },
   {
     "Activity Name": "Punctuated Lectures",
     "Description": "Ask students to perform five steps: listen, stop, reflect, write, give feedback. Students become self-monitoring listeners",
-    "Stage (Layer 1)": "READ",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Comprehension Check"
+    "TYPE": "READ",
+    "GENRE": "DISCUSSION",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Gallery VOTES",
     "Description": "Provide colored dot stickers to students and ask them to ?vote? on statements they agree with the most, by using up their limited dot supply on the prewritten topics displayed around the room on poster boards",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Truth Statements",
     "Description": "Either to introduce a topic or check comprehension, ask individuals to list out ?It is true that...? statements on the topic being discussed. The ensuing discussion might illustrate how ambiguous knowledge is sometimes",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "Comprehension Check"
+    "TYPE": "INTRODUCE",
+    "GENRE": "READ",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "False Statements",
     "Description": "Have students write topics about ______ that are currently not true, but where it would be desirable if they became true",
-    "Stage (Layer 1)": "WRITING (Short)",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Critical Thinking"
+    "TYPE": "WRITING (Short)",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Opposites",
     "Description": "Instructor lists out one or more concepts, for which students must come up with an antonym, and then defend their choice",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Vocabulary"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "Vocabulary"
   },
   {
     "Activity Name": "What/How/Why Outlines",
     "Description": "Write brief notes answering the what / how / why questions when analyzing a message or text",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "Critical Thinking"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": ""
   },
   {
     "Activity Name": "Approximate Analogies",
     "Description": "Students provide the second half of an analogy (A is to B as X is to Y)",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "Vocabulary"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": "Vocabulary"
   },
   {
     "Activity Name": "Problem Recognition Tasks",
     "Description": "Offer case studies with different types of problems and ask students to identify the TYPE of problem (which is different from solving it)",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Problem Solving"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Forced Debate",
     "Description": "Students debate in pairs, but must defend the opposite side of their personal opinion. Variation: half the class take one position, half the other. They line up and face each other. Each student may only speak once, so that all students on both sides can engage the issue",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Optimist/Pessimist",
     "Description": "In pairs, students take opposite emotional sides of a conversation. This technique can be applied to case studies and problem solving as well",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Get One, Give One",
     "Description": "Students fold a piece of paper in half and write ?Give One? on one side and ?Get One? on the other side. On the ?Give One? side, as them to write four insights from today?s material. Have them stand up and find a partner. Each student shares one idea from their ?Give One? side of the paper and writes down one idea on the ?Get One? side of the paper. Find a new partner until your ?Get One? side of paper is full of new ideas!",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Brain Drain",
     "Description": "Divide students into groups of 5 or 6. Hand out an empty grid of six rows and three columns to every student. Provide a prompt or task at the top to brainstorm. Each person brainstorms possible answers in row one. After three minutes, rotate papers clockwise and work on row 2 (but do not repeat any answers from row 1). Continue until sheet is filled in, then debrief to find the best answers",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "REVIEW",
-    "Miscellaneous Tags": "Brainstorm"
+    "TYPE": "ANALYZE",
+    "GENRE": "REVIEW",
+    "Misc": ""
   },
   {
     "Activity Name": "Photo Homework",
     "Description": "Students are assigned to use a smartphone to snap a picture of something at home (or out in the city) that captures a specific concept from the class, as assigned by the teacher",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Homework"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "Homework"
   },
   {
     "Activity Name": "Board of Artwork",
     "Description": "Post publicly the collected drawings / abstract concepts that students turned in for a previous activity and create an opportunity for discussion and debrief",
-    "Stage (Layer 1)": "DISCUSSION",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Debrief"
+    "TYPE": "DISCUSSION",
+    "GENRE": "VISUAL ART",
+    "Misc": ""
   },
   {
     "Activity Name": "Video Selfie",
     "Description": "Ask students to make a video of themselves performing the homework (or lab), as they will take it more seriously and be more likely to avoid mistakes",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Homework"
+    "TYPE": "FORMATIVE",
+    "GENRE": "VISUAL ART",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Objective Check",
     "Description": "Students write a brief essay in which they evaluate to what extent their work fulfills an assignment?s objectives",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Summative"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "Summative"
   },
   {
     "Activity Name": "Exam Evaluations",
     "Description": "Students explain what they are learning from exams, and evaluate the fairness, usefulness, and quality of tests",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Summative"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "Summative"
   },
   {
     "Activity Name": "Writing Fables",
     "Description": "Students write an animal fable (or at least sketch its outline) that will lead to a one-sentence moral matching the current concept discussed in class. May be done verbally instead",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative)",
-    "Miscellaneous Tags": "Summative"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "Summative"
   },
   {
     "Activity Name": "Make it a Story",
     "Description": "Encourage students to submit their group projects as a comic or story created online (bubblr, StripCreator, StoryJumper, or Storify)",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative) / VISUAL ART",
-    "Miscellaneous Tags": "Summative"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "Visual Art"
   },
   {
     "Activity Name": "Things You Know",
     "Description": "Give an envelope to every student. Inside are cut-up strips of paper with the topics/principles they should know about already. They divide into two piles: things they know well, and things they need help with. Then they debrief with nearby students on things any of them need help with",
-    "Stage (Layer 1)": "PRE-ASSESSMENT",
-    "Genre/Production (Layer 2/3)": "Home Connection",
-    "Miscellaneous Tags": "Start of Year"
+    "TYPE": "PRE-ASSESSMENT",
+    "GENRE": "Home Connection",
+    "Misc": "Start of Year"
   },
   {
     "Activity Name": "Total Physical Response (TPR)",
     "Description": "Students either stand or sit to indicate their binary answers, such as True/False, to the instructor?s questions",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "FORMATIVE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Recall, Summarize, Question, Connect, and Comment",
     "Description": "This method of starting each session (or each week) has five steps to reinforce the previous session?s material: recall it, summarize it, phrase a remaining question, connect it to the class as a whole, and comment on that class session",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "WRITING (short)"
+    "TYPE": "REVIEW",
+    "GENRE": "DISCUSSION",
+    "Misc": "WRITING (short)"
   },
   {
     "Activity Name": "Documented Problem Solutions",
     "Description": "Keep track of the steps needed to solve specific types of problems. Model a list for students first and then ask them to perform similar steps",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Problem Solving"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "Problem Solving"
   },
   {
     "Activity Name": "Post Last Week?s Slides to Canvas",
     "Description": "Post materials from previous week for student access and review",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "HOMEWORK",
-    "Miscellaneous Tags": "Home Connection"
+    "TYPE": "REVIEW",
+    "GENRE": "HOMEWORK",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Drawing Cards",
     "Description": "Have a set of cards with students? names. Draw a card to randomly call on a student",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "FORMATIVE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Black out Text",
     "Description": "Ask students to cut down the text to 1/2 its original length. Be ready to explain your edits",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Line Toss",
     "Description": "Cut up lines from the upcoming texts and have the students draw them from a bowl. Students toss the ball and say the line as they throw. The next student says their line when they throw the ball. After a few rounds, they add in a gesture. The class discusses what they think the text will be about after a few rounds",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "INTRODUCE",
+    "GENRE": "READ",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Orchestrate the Text",
     "Description": "Give a small group of 4 a section of text and have them split it up between their voices. They perform their section of text and talk about how they made their choices",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "WRITING (creative)"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": "WRITING (creative)"
   },
   {
     "Activity Name": "Turn Taking Reading",
     "Description": "Instead of the instructor reading a paragraph on screen (or leaving silence for students to do it), instruct them we will sit in silence until someone is moved to read ONE sentence, then someone else ? anyone ? will start the next sentence. Adds ?good? tension and raises energy",
-    "Stage (Layer 1)": "READ",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "READ",
+    "GENRE": "READ",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "One-Minute Papers",
     "Description": "Students write for one minute on a specific question (which might be generalized to ?what was the most important thing you learned today?). Best used at the end of the class session",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Muddiest Point",
     "Description": "Like the Minute Paper, but asks for the ?most confusing? point instead. Best used at the end of the class session",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Haiku",
     "Description": "Students write a haiku (a three-line poem: 5-syllables, then 7, then 5) on a given topic or concept, and then share it with others",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative)",
-    "Miscellaneous Tags": "POETRY"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "POETRY"
   },
   {
     "Activity Name": "Movement Lenses",
     "Description": "Students each adopt a \"lens\". When they hear something they like, they move forward. If they hear something they don't like, they step back. At the end students discuss what they noticed. (This can also be done with objects on a desk)",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "INTRODUCE",
+    "GENRE": "READ",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Drawing for Understanding",
     "Description": "Students illustrate an abstract concept or idea. Comparing drawings around the room can clear up misconceptions",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "REVIEW",
+    "GENRE": "VISUAL ART",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Circle the Questions",
     "Description": "Pre-make a handout that has a few dozen likely student questions (make them specific) on your topic for that day and ask students to circle the ones they don?t know the answers to, then turn in the paper",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Bumper Stickers",
     "Description": "Ask students to write a slogan-like bumper sticker to illustrate a particular concept from lecture. Variation: can be used to ask them to sum up the entire course in one sentence",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Concept Mapping",
     "Description": "Students write keywords onto sticky notes and then organize them into a flowchart. Could be less structured: students simply draw the connections they make between concepts",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Categorizing Grid",
     "Description": "Hand out rectangles divided into cells and a jumbled listing of terms that need to be categorized by row and column",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Teacher and Student",
     "Description": "Individually brainstorm the main points of the last homework, then assign roles of teacher and student to pairs. The teacher?s job is to sketch the main points, while the student?s job is to cross off points on his list as they are mentioned, but come up with 2-3 ones missed by the teacher",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Interactive Lit Review",
     "Description": "Give a different snippet of reading to each group in the room and a specific task (such as ?map ideas onto this larger set of principles you see on the screen?); capture bullets onto the board, then follow with a Gallery Walk (voting dots) to lead to more debrief",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "READ",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "READ",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "With a Creative Twist",
     "Description": "When assigning group presentations of different topics, each group also gets a 'twist' at random (such as must deliver some lines as limericks, must present part as karaoke song, etc)",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (Long)",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (Long)",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Ask the Winner",
     "Description": "Ask students to silently solve a problem on the board. After revealing the answer, instruct those who got it right to raise their hands (and keep them raised); then, all other students are to talk to someone with a raised hand to better understand the question and how to solve it next time",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Infographic",
     "Description": "Students use online services (visual.ly, infogr.am) to create an infographic that combines flowchart logic and visual presentation",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "WRITING (short)"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "WRITING (short)"
   },
   {
     "Activity Name": "True or False?",
     "Description": "Distribute index cards (one to each student) on which is written a statement. Half of the cards will contain statements that are true, half false. Students decide if theirs is one of the true statements or not, using whatever means they desire. Variation: designate half the room a space for those who think their statements are true, and the other half for false",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "FORMATIVE",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "FORMATIVE",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Invented Dialogues",
     "Description": "Students weave together real quotes from primary sources, or invent ones to fit the speaker and context",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative)",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Board Rotation",
     "Description": "Assign groups of students to each of the boards you have set up in the room (four or more works best), and assign one topic/question per board. After each group writes an answer, they rotate to the next board and write their answer below the first, and so on around the room. Variation: pass around flipchart paper with the same task",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "What?s the Principle",
     "Description": "After recognizing the problem, students assess what principle to apply in order to solve it. Helps focus on problem TYPES rather than individual specific problems. Principle(s) should be listed out",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Pass the Problem",
     "Description": "Divide students into groups. Give the first group a case or a problem and ask them to identify (and write down) the first step in solving the problem or analyzing the case (3 minutes). Pass the problem on to the next group and have them identify the next step. Continue until all groups have contributed",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Creating Categories",
     "Description": "In groups, students freewrite a position statement about your topic. Then they sort quotes/claims on strips of paper that you handed out, by creating categories as they go. Finally, they add their position statements on (or between) categories. The exercise should point out \"families\" of assumptions about a topic",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Pass the Problem",
     "Description": "Divide students into groups. Give the first group a case or a problem and ask them to identify (and write down) the first step in solving the problem or analyzing the case (3 minutes). Pass the problem on to the next group and have them identify the next step. Continue until all groups have contributed",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Pick the Winner",
     "Description": "Divide the class into groups and have all groups work on the same problem and record an answer/strategy on paper. Then, ask groups to switch with a nearby group, and evaluate their answer. After a few minutes, allow each set of groups to merge and ask them to select the better answer from the two choices, which will be presented to the class as a whole",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Layered Cake Discussion",
     "Description": "Every table/group works on the same task for a few minutes, then there?s a plenary debrief for the whole class, and finally repeat with a new topic to be discussed in the groups",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": ""
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Student Learning Communities",
     "Description": "Like faculty learning communities, these communities of practice are meant to invest the participants with ownership and a focus on sharing and joint discovery. Can be structured or unstructured",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Ownership, Peer Collaboration"
+    "TYPE": "INTRODUCE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Lecture Reaction",
     "Description": "Divide the class into four groups after a lecture: questioners (must ask two questions related to the material), example givers (provide applications), divergent thinkers (must disagree with some points of the lecture), and agreers (explain which points they agreed with or found helpful). After discussion, brief the whole class",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Movie Application",
     "Description": "In groups, students discuss examples of movies that made use of a concept or event discussed in class, trying to identify at least one way the movie-makers got it right, and one way they got it wrong",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Student Pictures",
     "Description": "Ask students to bring their own pictures from home to illustrate a specific concept to their working groups",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Home Connection"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Definitions and Applications",
     "Description": "In groups, students provide definitions, associations, and applications of concepts discussed in lecture",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "TV Commercial",
     "Description": "In groups, students create a 30-second TV commercial for the subject currently being discussed in class. Variation: ask them to act out their commercials",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Blender",
     "Description": "Students silently write a definition or brainstorm an idea for several minutes on paper. Then they form into groups, and two of them read their ideas and integrate elements from each. A third student reads his, and again integration occurs with the previous two, until finally everyone in the group has been integrated (or has attempted integration)",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "WRITING (short)",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Human Tableau or Class Modeling",
     "Description": "Groups create living scenes (also of inanimate objects) which relate to the classroom concepts or discussions",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "DISCUSSION"
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "Misc": "DISCUSSION"
   },
   {
     "Activity Name": "Build From Restricted Components",
     "Description": "Provide limited resources (or a discrete list of ideas that must be used) and either literally or figuratively dump them on the table, asking students in groups to construct a solution using only these things (note: may be familiar from the Apollo 13 movie). If possible, provide red herrings, and ask students to construct a solution using the minimum amount of items possible",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION / WRITING (short)",
-    "Miscellaneous Tags": "Problem-Solving, Creativity"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "WRITING (short)"
   },
   {
     "Activity Name": "Ranking Alternatives",
     "Description": "Teacher gives a situation, everyone thinks up as many alternative courses of action (or explanations of the situation) as possible. Compile list. In groups, now rank them by preference",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Decision-Making, Collaboration"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Simulation",
     "Description": "Place the class into a long-term simulation (like as a business) to enable Problem-Based Learning (PBL)",
-    "Stage (Layer 1)": "ANALYZE / EVALUATE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Problem-Based Learning, Long-Term Engagement"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Group Instructional Feedback Technique",
     "Description": "Someone other than the teacher polls groups on what works, what doesn?t, and how to fix it, then reports them to the teacher",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Peer Feedback, Reflection"
+    "TYPE": "REVIEW",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Classroom Assessment Quality Circles",
     "Description": "A small group of students forms a ?committee? on the quality of teaching and learning, which meets regularly and includes the instructor",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Peer Feedback, Reflection"
+    "TYPE": "REVIEW",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Audio and Videotaped Protocols",
     "Description": "Taping students while they are solving problems assesses the learner?s awareness of his own thinking",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION / WRITING (short)",
-    "Miscellaneous Tags": "Metacognition, Self-Assessment"
+    "TYPE": "EVALUATE",
+    "GENRE": "DISCUSSION",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Imaginary Show and Tell",
     "Description": "Students pretend they have brought an object relevant to current discussion, and ?display? it to the class while talking about its properties",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION / VISUAL ART",
-    "Miscellaneous Tags": "Creative Thinking, Presentation"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": ""
   },
   {
     "Activity Name": "Six Degrees of ?RNA Transcription Errors?",
     "Description": "Like the parlor game ?Six Degrees of Kevin Bacon? (in which actors are linked by joint projects), you provide groups with a conceptual start point and challenge them to leap to a given concept in six moves or fewer. One student judge in each group determines if each leap is fair and records the nature of the leaps for reporting back to the class",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Conceptual Linking, Critical Thinking"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "REVIEW"
   },
   {
     "Activity Name": "Sticky Note Discussions",
     "Description": "Divide students into cooperative groups and have them read individually. Ask them to use sticky notes to mark places that they want to talk about in the text. Then direct them to reread as a group and discuss the parts they have marked",
-    "Stage (Layer 1)": "ANALYZE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Active Reading, Collaboration"
+    "TYPE": "ANALYZE",
+    "GENRE": "DISCUSSION",
+    "Misc": "READ"
   },
   {
     "Activity Name": "D�j� vu",
     "Description": "Let students know the next class period they will be given the IDENTICAL test they just took, and create time for them to discuss in groups what they answered and why. The second test will also be taken by individuals.",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Test Prep, Reflection"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "80/20 Rule",
     "Description": "Students know to expect a second test right after the first one, with 80% of the questions identical, but 20% of the questions different from the first test",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Test Prep, Reflection"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Up to Half",
     "Description": "Students have an option to re-take the test, but can only earn extra points that equal 50% of the points missed on the first test",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Test Prep, Partial Credit"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Group Test / Group Grade",
     "Description": "Allow students to take an exam as a team, speaking out loud to each other during the exam (but not so loud that other groups can hear them), and they all share the same grade",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Collaboration, Team Assessment"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Group Test / Individual Grade",
     "Description": "Allow students to view and discuss the test as a team, but each student fills out an individual test sheet and thus results are not necessarily the same across the entire group",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Collaboration, Individual Assessment"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Group Second-Test",
     "Description": "Students take the test individually at first. Then, they take the same test a second time, this time in a group, defending their answers. The individual results should count for more points than the group effort",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "WRITING (short)",
-    "Miscellaneous Tags": "Test Prep, Collaboration"
+    "TYPE": "EVALUATE",
+    "GENRE": "WRITING (short)",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Draw Your Partner",
     "Description": "All students draw a number, then find a partner with the same number, and pair up to exchange information in the final few minutes of a test",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "DISCUSSION",
-    "Miscellaneous Tags": "Quick Collaboration, Peer Feedback"
+    "TYPE": "EVALUATE",
+    "GENRE": "DISCUSSION",
+    "Misc": "SUMMATIVE"
   },
   {
     "Activity Name": "Video Demonstrations",
     "Description": "Using a webcam, record a demonstration relevant to your topic and post it to YouTube",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Homework, Digital"
+    "TYPE": "INTRODUCE",
+    "GENRE": "VISUAL ART",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Student Videos",
     "Description": "Student projects, presentations, or speeches can take the form of video instead of PowerPoint, and uploaded for the class to see",
-    "Stage (Layer 1)": "SUMMATIVE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative)",
-    "Miscellaneous Tags": "Homework, Digital, Project"
+    "TYPE": "SUMMATIVE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Closed Eyes Method",
     "Description": "To prevent students at home from ?reading? presentations (such as poem recitations) that were supposed to be memorized for YouTube upload, require them to give the performance with their eyes closed",
-    "Stage (Layer 1)": "SUMMATIVE",
-    "Genre/Production (Layer 2/3)": "WRITING (creative)",
-    "Miscellaneous Tags": "Performance, Digital"
+    "TYPE": "SUMMATIVE",
+    "GENRE": "WRITING (creative)",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Interactive Video Quizzes",
     "Description": "Using annotations (text boxes) and making them hyperlinks to other uploaded videos, instructors can construct an on-screen ?multiple choice? test leading to differentiated video reactions, depending on how the student answers",
-    "Stage (Layer 1)": "EVALUATE",
-    "Genre/Production (Layer 2/3)": "SUMMATIVE",
-    "Miscellaneous Tags": "Digital, Assessment"
+    "TYPE": "EVALUATE",
+    "GENRE": "SUMMATIVE",
+    "Misc": "Home Connection"
   },
   {
     "Activity Name": "Movie Clips",
     "Description": "Show brief segments of popular movies to illustrate a point, start a conversation, have students hunt for what the movie gets wrong, etc.",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Pop Culture, Engagement"
+    "TYPE": "INTRODUCE",
+    "GENRE": "VISUAL ART",
+    "Misc": ""
   },
   {
     "Activity Name": "Shared Account",
     "Description": "Instructor creates a generic YouTube username/account and gives the password to everyone in the class, so student uploads all go to the same place",
-    "Stage (Layer 1)": "SUMMATIVE",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "Digital, Collaboration"
+    "TYPE": "SUMMATIVE",
+    "GENRE": "VISUAL ART",
+    "Misc": ""
   },
   {
     "Activity Name": "Handheld Clicker",
     "Description": "External vendors provide hardware (receivers) to faculty for free, and students buy a handheld device (usually $20) and maybe also online access by semester. Vendors include iClicker, CPS, and Turningpoint",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "TECHNOLOGY",
-    "Miscellaneous Tags": "Clicker, Polling, Engagement"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Cloud-Based Clicker Alternatives",
     "Description": "External vendors that use a website to track student input data using their own devices (laptop, smartphone, etc) and the campus wifi. Vendors charge students per semester (usually $20); there is no hardware for faculty members. Examples include LearningAnalytics, Top Hat Monocle, and Via Response",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "TECHNOLOGY",
-    "Miscellaneous Tags": "Clicker, Polling, Engagement"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "PollEverywhere",
     "Description": "Cloud-based clicker alternative that uses cell phone texting (SMS) for student responses. Business model calls for faculty-centered payment by user, but the free option suffices for anonymous polling of up to 35 students",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "TECHNOLOGY",
-    "Miscellaneous Tags": "Clicker, Polling, Engagement"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Hand Held Response Cards",
     "Description": "Distribute (or ask students to create) standardized cards that can be held aloft as visual responses to instructor questions. Example: handwrite a giant letter on each card to use in multiple choice questions",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "VISUAL",
-    "Miscellaneous Tags": "Engagement, Low-Tech, Polling"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Plickers",
     "Description": "Free handheld response cards for download (https://www.plickers.com/) that get scanned by teacher?s smartphone, even at a distance, to ?collect? results",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "TECHNOLOGY",
-    "Miscellaneous Tags": "Clicker, Polling, Engagement"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Color Boards",
     "Description": "Students are issued (or create their own) a set of four paper-sized cards. These can be used to vote on questions raised in class by lifting the appropriate board into the air. Optionally, the back of each card should be white so students do not see what others have answered",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "VISUAL",
-    "Miscellaneous Tags": "Engagement, Low-Tech, Polling"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Fingers on Chest",
     "Description": "Students vote on multiple choice questions by showing a finger count (1 through 4). Rather than raise them into the air, they hold their fingers across their chests so other students don?t see what the majority is voting",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "VISUAL",
-    "Miscellaneous Tags": "Engagement, Low-Tech, Polling"
+    "TYPE": "FORMATIVE",
+    "GENRE": "EVALUATE",
+    "Misc": ""
   },
   {
     "Activity Name": "Assertion Agreement",
     "Description": "Pose an assertion at the start of class that students vote on agreement; then revisit the same question after the class lecture/discussion has explored the concept more deeply",
-    "Stage (Layer 1)": "FORMATIVE",
-    "Genre/Production (Layer 2/3)": "INTERACTIVE",
-    "Miscellaneous Tags": "Polling, Engagement, Concept Check"
+    "TYPE": "FORMATIVE",
+    "GENRE": "INTERACTIVE",
+    "Misc": ""
   },
   {
     "Activity Name": "Quick Division",
     "Description": "Divide your class into two roughly equal segments for simultaneous, parallel tasks by invoking their date of birth: ?if your birthday falls on an odd-numbered day, do task X?if your birthday is even, do task Y.? Other variations include males and females, months of birth, odd or even inches in their height (5?10? vs 5?11?).",
-    "Stage (Layer 1)": "On Your Feet",
-    "Genre/Production (Layer 2/3)": "Making Groups",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "On Your Feet",
+    "GENRE": "Making Groups",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Question and Answer Cards",
     "Description": "Make index cards for every student in the class; half with questions about class content; half with the right answers. Shuffle the cards and have students find their appropriate partner by comparing questions and answers on their own cards.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Telescoping Images",
     "Description": "Craft sets of index cards grouped by theme, pass them out randomly, and have students find the other members of their group.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Speed Sharing",
     "Description": "Students form two concentric circles and share knowledge for 30?60 seconds, then rotate. Repeat until all have shared.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Trio Rotation",
     "Description": "Group students into threes, rotate members for a new problem, repeat.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Go to Your Post",
     "Description": "Tape signs on walls representing different topics/preferences, and let students self-select into groups.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Four Corners",
     "Description": "Put up a different topic in each corner and ask students to choose one and discuss with others who chose the same topic.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Deck of Cards",
     "Description": "Use playing cards to form groups by suit, card, or number. Pre-assign roles if desired.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Introduce Your Partner?s Non-Obvious Trait",
     "Description": "Students partner up and are tasked with learning one thing about the other person that is not obvious by looking at them. Then, they introduce their partner to the larger class. Instructors can use this time to record a crude seating chart of the students and begin to learn their names.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Scrapbook Selection",
     "Description": "Put students in groups and give each group a big pile of printed photos. Ask them to choose one as a group that epitomizes their reaction/definition of the topic being discussed, and explain why.",
-    "Stage (Layer 1)": "DISCUSSION",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": "FORMATIVE"
+    "TYPE": "DISCUSSION",
+    "GENRE": "VISUAL ART",
+    "Misc": "FORMATIVE"
   },
   {
     "Activity Name": "Brush with Fame",
     "Description": "Students relate their closest encounter with someone famous, even if it has to be a story about something that happened to a friend or relative.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": ""
+    "TYPE": "Ice Breaker",
+    "GENRE": "Ice Breaker",
+    "Misc": ""
   },
   {
     "Activity Name": "Name Game",
     "Description": "Students form circles in groups of 8-10 and one at a time state their name with an alliterative action: ?I?m Jumping James!? They proceed around the circle, adding names and actions, until the last person must recite everyone?s names and actions.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": ""
+    "TYPE": "Making Groups",
+    "GENRE": "Ice Breaker",
+    "Misc": ""
   },
   {
     "Activity Name": "Human Bingo",
     "Description": "Students perform a scavenger hunt to get acquainted: ?find someone who dislikes carrots, someone who owns a German car,? etc.",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "INTRODUCE",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Line Dance",
     "Description": "Students line up according to their level of agreement on a controversial subject: strong agreement on one side, strong disagreement on the other.",
-    "Stage (Layer 1)": "Making Groups",
-    "Genre/Production (Layer 2/3)": "Making Groups",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Making Groups",
+    "GENRE": "Making Groups",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Two Truths and a Lie",
     "Description": "Each student relates two true statements and one falsehood about themselves; others guess the lie.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": ""
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": ""
   },
   {
     "Activity Name": "Name Tag Trio",
     "Description": "Color code name tags and ask people to form groups of three with the same color, then introduce themselves.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "Making Groups",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "Making Groups",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Sketch Intro",
     "Description": "Ask participants to draw a picture, using no letters, that captures a key facet of their experience, philosophy, or personality.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "VISUAL ART",
-    "Miscellaneous Tags": ""
+    "TYPE": "Ice Breaker",
+    "GENRE": "VISUAL ART",
+    "Misc": ""
   },
   {
     "Activity Name": "Speed Skating",
     "Description": "Students line up in a circle and step forward one at a time to say a quick personal statement (e.g., ?I am Belgian,? ?I love classical music?), then step back into position.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Word Association Cloud",
     "Description": "Collect secret-ballot responses to a word association prompt related to your topic, and paste them into a word-cloud generator to show the most frequently used words.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": ""
+    "TYPE": "Ice Breaker",
+    "GENRE": "Ice Breaker",
+    "Misc": ""
   },
   {
     "Activity Name": "Answer Any Three",
     "Description": "Write 5 questions on the board and ask students to stand (or pair off) and answer any 3 of the 5. Sample questions can be personal or content-related.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Family Name Game",
     "Description": "Students share some history about their name: who named them, any nickname, are they a namesake, do they like their name, etc.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": ""
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": ""
   },
   {
     "Activity Name": "What?s in a Name?",
     "Description": "Pair students up and allow them to interview one another about their first and middle names, noting any cultural uniqueness. Then have each student in the dyad introduce their partner to the rest of the class sharing what they learned about their partner?s name(s).",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "Making Groups",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "Making Groups",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Line Up",
     "Description": "Ask students to arrange themselves in a line according to some characteristic (height, age, birthdate, level of athleticism, etc.). To add a twist, have them complete the task without talking.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "Making Groups",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "Making Groups",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Wheel in a Wheel",
     "Description": "Ask half of the class to form a circle facing outward. Then have the other half form a circle around those students, facing inward, so that they are facing one of the students in the inner circle. The inner circle remains seated throughout the exercise, while the outer circle rotates to the right, one person at a time. With each new pairing you provide a discussion topic/question that will help the students get to know one another. Make sure both partners have time to share. Some example topics include: What do you consider to be one of your greatest accomplishments in life? What person has most affected your life in a positive way? What are the best aspects of your personality and why?",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Scavenger Hunt",
     "Description": "Ask students to circulate around the room and locate classmates who fit in certain categories (i.e., only children, lived abroad, bi- or multi-lingual, same major, etc.). You can also include statements that revolve around class content.",
-    "Stage (Layer 1)": "Ice Breaker",
-    "Genre/Production (Layer 2/3)": "",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "Ice Breaker",
+    "GENRE": "",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Course Expectation Exercise",
     "Description": "Write the name of your course on the blackboard. Ask students to individually write down three expectations they have for you or for the course. Then put students into small groups and tell them they must reach consensus regarding their group?s top 3?5 expectations. Then allow groups to report back to the whole class.",
-    "Stage (Layer 1)": "INTRODUCE",
-    "Genre/Production (Layer 2/3)": "Ice Breaker",
-    "Miscellaneous Tags": "On Your Feet"
+    "TYPE": "INTRODUCE",
+    "GENRE": "Ice Breaker",
+    "Misc": "On Your Feet"
   },
   {
     "Activity Name": "Pictionary",
     "Description": "For important concepts and especially terms, have students play pictionary: one draws images only, the rest must guess the term.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Super-Password",
     "Description": "Also for concepts and terms; one student tries to get his partner to say the key term by circumlocution, and cannot say any of the ?forbidden words? on a card prepared ahead of time.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Guess the Password",
     "Description": "The instructor reveals a list of words (esp. nouns) one at a time and at each point, ask students to guess what key term they are related to. The hints become increasingly specific to make the answer more clear.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Twenty Questions",
     "Description": "Assign a person, theory, concept, event, etc. to individual students and have the partner ask yes/no questions to guess what the concept is. Also works on a plenary level, with one student fielding the questions from the whole class.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Hollywood Squares",
     "Description": "Choose students to sit as ?celebrities? at the front of the class. Variation: allow the celebrities to use books and notes in deciding how to help the contestants.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Scrabble",
     "Description": "Use the chapter (or course) title as the pool of letters from which to make words (e.g., mitochondrialdna) and allow teams to brainstorm as many words as possible from that list, but all words must be relevant to this test. Variation: actually play scrabble on boards afterward.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   },
   {
     "Activity Name": "Who am I?",
     "Description": "Tape a term or name on the back of each student, out of view. Each student then wanders about the room, posing yes/no questions to the other students in an effort to guess the term on his own back.",
-    "Stage (Layer 1)": "REVIEW",
-    "Genre/Production (Layer 2/3)": "Games",
-    "Miscellaneous Tags": ""
+    "TYPE": "REVIEW",
+    "GENRE": "Games",
+    "Misc": ""
   }
 ]
