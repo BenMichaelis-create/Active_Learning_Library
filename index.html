@@ -13,25 +13,16 @@
     <!-- Search -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search activities or tags..." />
+      <button id="searchButton">Go</button>
     </div>
 
-    <!-- Filters -->
+    <!-- Tag Filters -->
     <div class="filters">
-      <div class="filter-group">
-        <h3>Type</h3>
-        <div id="typeFilters"></div>
-      </div>
-      <div class="filter-group">
-        <h3>Genre</h3>
-        <div id="genreFilters"></div>
-      </div>
-      <div class="filter-group">
-        <h3>Misc</h3>
-        <div id="miscFilters"></div>
-      </div>
+      <h3>Filter by Tags</h3>
+      <div id="tagFilters" class="filter-group"></div>
     </div>
 
-    <!-- Results -->
+    <!-- Activity List -->
     <div id="activityList" class="activity-list"></div>
   </div>
 
