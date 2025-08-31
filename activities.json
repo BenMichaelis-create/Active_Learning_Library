@@ -4,34 +4,41 @@
     "Description": "Students explain what they are learning from exams, and evaluate the fairness, usefulness, and quality of tests.",
     "TYPE": "EVALUATE",
     "GENRE": "WRITING",
-    "Misc": "EVALUATE"
+    "MISC": "EVALUATE"
   },
   {
     "Activity Name": "Writing Fables",
-    "Description": "Students write an animal fable (or sketch its outline) that leads to a one-sentence moral matching the current concept discussed in class.",
+    "Description": "Students write an animal fable (or at least sketch its outline) that will lead to a one-sentence moral matching the current concept discussed in class.",
     "TYPE": "EVALUATE",
     "GENRE": "CREATIVE WRITING",
-    "Misc": "EVALUATE"
+    "MISC": "EVALUATE"
   },
   {
-    "Activity Name": "Vocabulary Relay",
-    "Description": "Students race to match vocabulary words to definitions in teams, promoting movement and collaboration.",
+    "Activity Name": "Vocabulary Match",
+    "Description": "Students pair words with definitions in a fast-paced game format to reinforce vocabulary retention.",
     "TYPE": "INTRODUCE",
     "GENRE": "VOCABULARY",
-    "Misc": "ON YOUR FEET"
+    "MISC": "ON YOUR FEET"
+  },
+  {
+    "Activity Name": "Read Aloud Discussion",
+    "Description": "Students read a short passage aloud and discuss key points to improve comprehension.",
+    "TYPE": "READ",
+    "GENRE": "READ",
+    "MISC": "GROUP DISCUSSION"
+  },
+  {
+    "Activity Name": "Art Concept Sketch",
+    "Description": "Students create a quick visual representation of a concept to demonstrate understanding through art.",
+    "TYPE": "ANALYZE",
+    "GENRE": "VISUAL ART",
+    "MISC": "ON YOUR FEET"
   },
   {
     "Activity Name": "Peer Review",
-    "Description": "Students give feedback on each other's writing to improve understanding and editing skills.",
+    "Description": "Students exchange written work and provide constructive feedback using a guided rubric.",
     "TYPE": "FORMATIVE",
     "GENRE": "WRITING",
-    "Misc": "MAKING GROUPS"
-  },
-  {
-    "Activity Name": "Creative Storyboarding",
-    "Description": "Students create a storyboard for a scene or concept to visualize ideas and enhance comprehension.",
-    "TYPE": "ANALYZE",
-    "GENRE": "VISUAL ART",
-    "Misc": "ON YOUR FEET"
+    "MISC": "MAKING GROUPS"
   }
 ]
