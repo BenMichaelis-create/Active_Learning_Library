@@ -91,12 +91,12 @@ function displayActivities(list) {
     const card = document.createElement("div");
     card.classList.add("activity-card");
 
-    // Colored border based on first tag that exists
-    let tagColor = "lightgray"; // fallback
-    if (a["TYPE"]) tagColor = "#ff7f7f"; // light red
-    else if (a["GENRE"]) tagColor = "#7fbfff"; // light blue
-    else if (a["MISC"]) tagColor = "#7fff7f"; // light green
-    card.style.borderLeft = `6px solid ${tagColor}`;
+    // Determine background color based on first existing tag
+    let bgColor = "#ecf0f1"; // default light gray
+    if (a["TYPE"]) bgColor = "#ffcccc";       // light red
+    else if (a["GENRE"]) bgColor = "#cce5ff"; // light blue
+    else if (a["MISC"]) bgColor = "#ccffcc";  // light green
+    card.style.backgroundColor = bgColor;
 
     const title = document.createElement("h4");
     title.textContent = a["Activity Name"];
@@ -108,7 +108,7 @@ function displayActivities(list) {
 
     // Show all tags in small light-grey text
     const tagLine = document.createElement("p");
-    tagLine.style.color = "#888";
+    tagLine.style.color = "#555"; // slightly darker grey for readability
     tagLine.style.fontSize = "0.8em";
     const tags = [a["TYPE"], a["GENRE"], a["MISC"]].filter(Boolean);
     tagLine.textContent = tags.join(" • ");
