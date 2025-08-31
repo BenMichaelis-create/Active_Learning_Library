@@ -86,7 +86,6 @@ h1 {
 .activity-card {
   border-radius: 10px;
   padding: 15px;
-  background-color: #ecf0f1;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s, filter 0.2s;
   color: #2c3e50;
@@ -111,7 +110,3 @@ h1 {
   margin-top: 10px;
 }
 
-/* Card background colors by first tag category */
-.bg-TYPE { background-color: #ffcccc; }
-.bg-GENRE { background-color: #cce5ff; }
-.bg-MISC { background-color: #ccffcc; }
