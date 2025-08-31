@@ -5,19 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teacher Activity Explorer</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+  body { font-family: Arial, sans-serif; margin: 20px; background: #f2f2f2; }
   h1 { text-align: center; }
   .search-section, .tags-section, .buttons { margin-bottom: 20px; }
   .tags-section { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-  .tags-section h2 { width: 100%; margin-bottom: 5px; }
-  .tags-section button { margin: 3px; padding: 5px 10px; border: 1px solid #888; border-radius: 4px; background: #fff; cursor: pointer; }
+  .tags-section h2 { width: 100%; margin-bottom: 5px; font-size: 1.1em; color: #333; }
+  .tags-section button { margin: 3px; padding: 5px 10px; border: 1px solid #888; border-radius: 6px; background: #fff; cursor: pointer; transition: all 0.2s; }
+  .tags-section button:hover { transform: scale(1.05); }
   .tags-section button.active { background-color: #4a90e2; color: white; }
   .buttons { text-align: center; }
-  .buttons button { padding: 8px 16px; margin: 0 5px; border-radius: 4px; border: 1px solid #888; background-color: #eee; cursor: pointer; }
-  .activities { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
-  .activity { border: 1px solid #ccc; padding: 10px; width: 30%; box-sizing: border-box; border-radius: 4px; }
+  .buttons button { padding: 8px 16px; margin: 0 5px; border-radius: 6px; border: 1px solid #888; background-color: #eee; cursor: pointer; transition: all 0.2s; }
+  .buttons button:hover { background-color: #ddd; }
+  .activities { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; }
+  .activity { border: 1px solid #ccc; padding: 10px; width: 30%; box-sizing: border-box; border-radius: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+  .activity:hover { transform: translateY(-2px); }
   .activity h3 { margin-top: 0; }
-  .tags-caption { font-size: 0.9em; color: #888; margin-top: 6px; }
+  .tags-caption { font-size: 0.85em; color: #888; margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -55,8 +58,8 @@ let currentTags = [];
 
 // Tag groups
 const tagGroups = {
-  "Type": ["PRE-ASSESSMENT","INTRODUCE","READ","ANALYZE","REVIEW","EVALUATE"],
-  "Genre": ["LONG TEXT","SHORT TEXT","POETRY","VISUAL ART","VOCABULARY"],
+  "Stage": ["PRE-ASSESSMENT","INTRODUCE","READ","ANALYZE","REVIEW","EVALUATE"],
+  "Genre": ["LONG TEXT","SHORT TEXT","POETRY","VISUAL ART","VOCABULARY","GRAMMAR","PUNCTUATION","SPEECH","ARTICLE / ESSAY","VISUAL ART / MEDIA"],
   "Mode": ["WRITING (short)","WRITING (long)","WRITING (creative)","DISCUSSION","VISUAL ART"],
   "Misc": ["GAMES","ICEBREAKERS","FORMING GROUPS","ON YOUR FEET"]
 };
@@ -68,16 +71,24 @@ const layerColors = {
   "READ": "#d5f5e3",
   "ANALYZE": "#f9e79f",
   "REVIEW": "#f5cba7",
-  "EVALUATE": "#d2b4de"
+  "EVALUATE": "#d2b4de",
   "GAMES": "#d6eaf9",
   "ON YOUR FEET": "#fdebd1",
   "VISUAL ART": "#d5f5e4",
-  "FORMING GROUOPS": "#f9e79g",
+  "FORMING GROUPS": "#f9e79f",
   "WRITING (short)": "#f5cba8",
+  "WRITING (long)": "#f0d9ff",
   "WRITING (creative)": "#d2b4de",
-  "DISCUSSION": "#d2b4de",
-  "FORMATIVE": "#f0b3ff",      // add any missing Stage tags
-  "SUMMATIVE": "#c6f5d0"
+  "DISCUSSION": "#f5e6c8",
+  "SPEECH": "#d0f0c0",
+  "ARTICLE / ESSAY": "#f0d0c0",
+  "LONG TEXT": "#d0e0f0",
+  "SHORT TEXT": "#f0f0d0",
+  "POETRY": "#e0d0f0",
+  "VOCABULARY": "#d0f0e0",
+  "GRAMMAR": "#f0e0f0",
+  "PUNCTUATION": "#e0f0d0",
+  "VISUAL ART / MEDIA": "#f0d0f0"
 };
 
 // Create tag buttons
@@ -134,8 +145,14 @@ function renderActivities(list) {
         win.appendChild(caption);
       }
       caption.innerText = allTags;
-      const primaryTag = list[i]["Stage (Layer 1)"].split(" / ")[0];
-      win.style.backgroundColor = layerColors[primaryTag] || "#fff";
+
+      // Pick first tag with color
+      const allTagsForColor = [list[i]["Stage (Layer 1)"], list[i]["Genre/Production (Layer 2/3)"], list[i]["Miscellaneous Tags"]];
+      let color = "#fff";
+      for(let t of allTagsForColor){
+        if(t && layerColors[t]) { color = layerColors[t]; break; }
+      }
+      win.style.backgroundColor = color;
     } else {
       win.querySelector("h3").innerText = "No Activity";
       win.querySelector("p").innerText = "";
@@ -173,5 +190,3 @@ function filterByTags() {
 
 </body>
 </html>
-
-
