@@ -13,35 +13,29 @@
     <!-- Search -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search activities or tags..." />
-      <button id="searchButton">Go</button>
     </div>
 
-    <!-- Tag Filters -->
+    <!-- Filters -->
     <div class="filters">
-      <h3>Filter by Tags</h3>
-      <div class="filter-category">
-        <h4>Type</h4>
-        <div id="typeFilters" class="filter-group"></div>
+      <div class="filter-group">
+        <h3>Type</h3>
+        <div id="typeFilters"></div>
       </div>
-      <div class="filter-category">
-        <h4>Genre</h4>
-        <div id="genreFilters" class="filter-group"></div>
+      <div class="filter-group">
+        <h3>Genre</h3>
+        <div id="genreFilters"></div>
       </div>
-      <div class="filter-category">
-        <h4>Misc</h4>
-        <div id="miscFilters" class="filter-group"></div>
+      <div class="filter-group">
+        <h3>Misc</h3>
+        <div id="miscFilters"></div>
       </div>
     </div>
 
-    <!-- Activity Results -->
+    <!-- Results -->
     <div id="activityList" class="activity-list"></div>
-  </div>
-
-  <!-- Debug Counter -->
-  <div id="debugCounter" style="position: fixed; top: 10px; right: 10px; background: #fff; border: 1px solid #ccc; padding: 5px 10px; font-family: monospace; z-index: 1000;">
-    Step 0: Starting
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
