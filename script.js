@@ -1,97 +1,84 @@
-// script.js
 let activities = [];
 let selectedTags = [];
 
-// Category definitions for display only
+// Tag categories for display purposes only
 const typeTags = ["INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","CLOSING"];
 const genreTags = ["READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"];
 const miscTags = ["ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"];
 
-async function loadActivities() {
-  try {
-    const response = await fetch("activities.json");
-    activities = await response.json();
-    generateFilters();
-    displayActivities(activities);
-  } catch (err) {
-    console.error("Error loading activities:", err);
-  }
-}
+// Map tags to colors
+const tagColors = {
+  "INTRODUCE":"#fce4ec","PRE-ASSESSMENT":"#fff9c4","READ":"#ffe0e0","ANALYZE":"#f3e5f5",
+  "REVIEW":"#b3e5fc","EVALUATE":"#ffccbc","FORMATIVE":"#c8e6c9","CLOSING":"#f0f4c3",
+  "VOCABULARY":"#e0f7ff","WRITING":"#fff3e0","CREATIVE WRITING":"#fff8e1","VISUAL ART":"#e0ffe0",
+  "ON YOUR FEET":"#ffdede","HOME WORK":"#deffe0","GAMES":"#e0deff","ICE BREAKER":"#fff0de","MAKING GROUPS":"#f0e0ff"
+};
 
-// Normalize tags to uppercase
+// Utility to normalize tags
 function normalizeTag(tag) {
-  return tag.trim().toUpperCase();
+  return tag ? tag.trim().toUpperCase() : "";
 }
 
-// Determine display category for a tag
-function assignCategory(tag) {
-  const t = normalizeTag(tag);
-  if (typeTags.map(normalizeTag).includes(t)) return "TYPE";
-  if (genreTags.map(normalizeTag).includes(t)) return "GENRE";
-  return "Misc";
+// Load activities and initialize filters
+async function loadActivities() {
+  const response = await fetch("activities.json");
+  activities = await response.json();
+  generateFilters();
+  displayActivities(activities);
 }
 
-// Generate buttons for each category
+// Generate filter buttons under categories
 function generateFilters() {
-  const containerMap = {
-    TYPE: document.getElementById("typeFilters"),
-    GENRE: document.getElementById("genreFilters"),
-    Misc: document.getElementById("miscFilters")
-  };
+  const categories = {TYPE:typeTags, GENRE:genreTags, MISC:miscTags};
+  const container = document.getElementById("tagFilters");
+  container.innerHTML = "";
 
-  // Clear old buttons
-  Object.values(containerMap).forEach(c => c.innerHTML = "");
+  Object.keys(categories).forEach(cat => {
+    const heading = document.createElement("h4");
+    heading.textContent = cat;
+    container.appendChild(heading);
 
-  // Collect unique tags per category
-  const tagsPerCategory = { TYPE: new Set(), GENRE: new Set(), Misc: new Set() };
-  activities.forEach(a => {
-    Object.keys(tagsPerCategory).forEach(cat => {
-      if (a[cat]) tagsPerCategory[cat].add(normalizeTag(a[cat]));
-    });
-  });
-
-  // Generate buttons
-  Object.keys(tagsPerCategory).forEach(cat => {
-    const container = containerMap[cat];
-    tagsPerCategory[cat].forEach(tag => {
+    categories[cat].forEach(tag => {
       const btn = document.createElement("button");
       btn.textContent = tag;
       btn.classList.add("filter-button");
       btn.addEventListener("click", () => {
-        if (selectedTags.includes(tag)) {
-          selectedTags.splice(selectedTags.indexOf(tag), 1);
-          btn.classList.remove("selected");
-        } else {
-          selectedTags.push(tag);
-          btn.classList.add("selected");
-        }
-        filterActivities();
+        toggleTag(tag, btn);
       });
       container.appendChild(btn);
     });
   });
 }
 
-// Filter activities based on search and selected tags
+// Toggle tag selection
+function toggleTag(tag, btn) {
+  const i = selectedTags.indexOf(tag);
+  if (i > -1) {
+    selectedTags.splice(i,1);
+    btn.classList.remove("selected");
+  } else {
+    selectedTags.push(tag);
+    btn.classList.add("selected");
+  }
+  filterActivities();
+}
+
+// Filter activities based on search input and selected tags
 function filterActivities() {
-  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const searchInput = document.getElementById("searchInput").value.trim().toUpperCase();
 
   const filtered = activities.filter(a => {
-    const matchesSearch =
-      a["Activity Name"].toLowerCase().includes(searchInput) ||
-      (a["TYPE"] && a["TYPE"].toLowerCase().includes(searchInput)) ||
-      (a["GENRE"] && a["GENRE"].toLowerCase().includes(searchInput)) ||
-      (a["Misc"] && a["Misc"].toLowerCase().includes(searchInput));
-
-    // If no tags are selected, include all
-    if (selectedTags.length === 0) return matchesSearch;
-
-    // Otherwise, at least one selected tag must be present
     const activityTags = [
-      normalizeTag(a["TYPE"] || ""),
-      normalizeTag(a["GENRE"] || ""),
-      normalizeTag(a["Misc"] || "")
+      normalizeTag(a["TYPE"]),
+      normalizeTag(a["GENRE"]),
+      normalizeTag(a["Misc"])
     ];
+
+    // Matches search input in name or any tag
+    const matchesSearch = a["Activity Name"].toUpperCase().includes(searchInput) ||
+      activityTags.some(tag => tag.includes(searchInput));
+
+    // Matches all selected tags
     const matchesTags = selectedTags.every(tag => activityTags.includes(tag));
 
     return matchesSearch && matchesTags;
@@ -100,7 +87,7 @@ function filterActivities() {
   displayActivities(filtered);
 }
 
-// Display activity cards
+// Display activities
 function displayActivities(list) {
   const container = document.getElementById("activityList");
   container.innerHTML = "";
@@ -109,52 +96,32 @@ function displayActivities(list) {
     const card = document.createElement("div");
     card.classList.add("activity-card");
 
-    // Determine first tag for color priority: TYPE > GENRE > Misc
-    let colorTag = normalizeTag(a["TYPE"] || "") || normalizeTag(a["GENRE"] || "") || normalizeTag(a["Misc"] || "");
-    card.style.backgroundColor = getTagColor(colorTag);
+    // Determine color from first non-empty tag
+    const firstTag = [a["TYPE"], a["GENRE"], a["Misc"]].find(t => t);
+    const color = tagColors[normalizeTag(firstTag)] || "#ecf0f1";
+    card.style.backgroundColor = color;
 
-    // Title
     const title = document.createElement("h4");
     title.textContent = a["Activity Name"];
     card.appendChild(title);
 
-    // Description
     const desc = document.createElement("p");
     desc.textContent = a["Description"];
     card.appendChild(desc);
 
-    // Tag display
-    const tagDiv = document.createElement("div");
-    tagDiv.classList.add("activity-tags");
-    const tags = [a["TYPE"], a["GENRE"], a["Misc"]].filter(Boolean);
-    tagDiv.textContent = tags.join(" • ");
-    card.appendChild(tagDiv);
+    const tagsDiv = document.createElement("div");
+    tagsDiv.classList.add("activity-tags");
+    const tagList = [a["TYPE"], a["GENRE"], a["Misc"]].filter(t=>t);
+    tagsDiv.textContent = tagList.join(" | ");
+    card.appendChild(tagsDiv);
 
     container.appendChild(card);
   });
 }
 
-// Simple color mapping for tags
-function getTagColor(tag) {
-  const colors = {
-    "READ": "#ffe0e0",
-    "VOCABULARY": "#e0f7ff",
-    "WRITING": "#fff3e0",
-    "CREATIVE WRITING": "#f0f4c3",
-    "VISUAL ART": "#e0ffe0",
-    "INTRODUCE": "#fce4ec",
-    "PRE-ASSESSMENT": "#fff9c4",
-    "ANALYZE": "#f3e5f5",
-    "REVIEW": "#b3e5fc",
-    "EVALUATE": "#ffccbc",
-    "FORMATIVE": "#c8e6c9",
-    "CLOSING": "#f0f4c3",
-    "SUMMATIVE": "#d1c4e9"
-  };
-  return colors[tag] || "#ecf0f1"; // default light gray
-}
-
-// Search button event
+// Event listeners
 document.getElementById("searchButton").addEventListener("click", filterActivities);
+document.getElementById("searchInput").addEventListener("input", filterActivities);
 
 loadActivities();
+
