@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -30,12 +30,31 @@ h1 {
   border: 1px solid #ccc;
 }
 
+.search-bar button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #2980b9;
+}
+
 .filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-.filter-group h4 {
-  margin-bottom: 5px;
+.filter-category h4 {
+  margin: 5px 0;
   color: #34495e;
 }
 
@@ -47,6 +66,7 @@ h1 {
   background-color: white;
   cursor: pointer;
   transition: all 0.2s;
+  font-size: 14px;
 }
 
 .filter-group button.selected {
@@ -55,25 +75,29 @@ h1 {
 }
 
 .filter-group button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .activity-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .activity-card {
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #ecf0f1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .activity-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .activity-card h4 {
@@ -82,10 +106,27 @@ h1 {
 }
 
 .activity-card p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #2c3e50;
 }
 
-.activity-tags {
+.activity-card .tag-list {
   font-size: 12px;
   color: #7f8c8d;
+  margin-top: 10px;
 }
+
+/* Example card colors by tag */
+.card-READ { background-color: #ffe0e0; }
+.card-VOCABULARY { background-color: #e0f7ff; }
+.card-WRITING { background-color: #fff3e0; }
+.card-CREATIVE_WRITING { background-color: #f0e6ff; }
+.card-VISUAL_ART { background-color: #e0ffe0; }
+.card-INTRODUCE { background-color: #fce4ec; }
+.card-ANALYZE { background-color: #f3e5f5; }
+.card-PRE-ASSESSMENT { background-color: #fff9c4; }
+.card-FORMATIVE { background-color: #c8e6c9; }
+.card-REVIEW { background-color: #b3e5fc; }
+.card-EVALUATE { background-color: #ffccbc; }
+.card-SUMMATIVE { background-color: #d1c4e9; }
+.card-CLOSING { background-color: #f0f4c3; }
