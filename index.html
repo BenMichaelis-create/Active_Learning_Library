@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Activity Explorer</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .search-section, .tags-section, .buttons { margin-bottom: 20px; }
+  .tags-section button { margin: 3px; }
+  .tags-section button.active { background-color: #4a90e2; color: white; }
+  .activities { display: flex; flex-wrap: wrap; gap: 10px; }
+  .activity { border: 1px solid #ccc; padding: 10px; width: 45%; box-sizing: border-box; }
+  .activity h3 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<h1>Teacher Activity Explorer</h1>
+
+<!-- Search Bar -->
+<div class="search-section">
+  <input type="text" id="searchBox" placeholder="Search by activity name">
+  <button onclick="searchActivities()">Search</button>
+</div>
+
+<!-- Tag Buttons -->
+<div class="tags-section" id="tagButtons"></div>
+<div class="buttons">
+  <button onclick="filterByTags()">Go (Tags)</button>
+  <button onclick="pickRandomActivities()">Re-roll</button>
+  <button onclick="resetTags()">Back</button>
+</div>
+
+<!-- Activity Windows -->
+<div class="activities" id="activityContainer">
+  <div class="activity"><h3>Activity 1</h3><p>Description...</p></div>
+  <div class="activity"><h3>Activity 2</h3><p>Description...</p></div>
+  <div class="activity"><h3>Activity 3</h3><p>Description...</p></div>
+  <div class="activity"><h3>Activity 4</h3><p>Description...</p></div>
+</div>
+
+<script>
+let activities = [];
+let filteredActivities = [];
+let currentTags = [];
+
+// Layers/Tags
+const tags = [
+  "PRE-ASSESSMENT","INTRODUCE","READ","ANALYZE","REVIEW","EVALUATE",
+  "LONG TEXT","SHORT TEXT","POETRY","VISUAL ART","SPEECH","ARTICLE / ESSAY","VISUAL ART / MEDIA",
+  "VOCABULARY","GRAMMAR","PUNCTUATION","WRITING (short)","WRITING (long)","WRITING (creative)",
+  "DISCUSSION","Games","Icebreakers","Forming Groups"
+];
+
+// Create tag buttons
+const tagContainer = document.getElementById("tagButtons");
+tags.forEach(tag => {
+  const btn = document.createElement("button");
+  btn.innerText = tag;
+  btn.onclick = () => {
+    btn.classList.toggle("active");
+    currentTags = Array.from(document.querySelectorAll(".tags-section button.active")).map(b => b.innerText);
+  };
+  tagContainer.appendChild(btn);
+});
+
+// Load activities JSON
+fetch('activities.json')
+  .then(res => res.json())
+  .then(data => {
+    activities = data;
+    filteredActivities = [...activities];
+    pickRandomActivities();
+  })
+  .catch(err => console.error("Error loading activities:", err));
+
+// Pick 4 random activities
+function pickRandomActivities() {
+  const copy = [...filteredActivities];
+  const result = [];
+  while(result.length < 4 && copy.length > 0){
+    const index = Math.floor(Math.random() * copy.length);
+    result.push(copy.splice(index,1)[0]);
+  }
+  renderActivities(result);
+}
+
+// Render activities in the 4 windows
+function renderActivities(list) {
+  const container = document.getElementById("activityContainer");
+  const windows = container.querySelectorAll(".activity");
+  windows.forEach((win, i) => {
+    if(list[i]) {
+      win.querySelector("h3").innerText = list[i].title;
+      win.querySelector("p").innerText = list[i].description;
+    } else {
+      win.querySelector("h3").innerText = "No Activity";
+      win.querySelector("p").innerText = "";
+    }
+  });
+}
+
+// Search by name
+function searchActivities() {
+  const query = document.getElementById("searchBox").value.toLowerCase();
+  filteredActivities = activities.filter(a => a.title.toLowerCase().includes(query));
+  pickRandomActivities();
+}
+
+// Filter by tags
+function filterByTags() {
+  if(currentTags.length === 0) {
+    filteredActivities = [...activities];
+  } else {
+    filteredActivities = activities.filter(a => currentTags.some(t => a.tags.includes(t)));
+  }
+  pickRandomActivities();
+}
+
+// Reset tags and search
+function resetTags() {
+  document.getElementById("searchBox").value = "";
+  document.querySelectorAll(".tags-section button.active").forEach(b => b.classList.remove("active"));
+  currentTags = [];
+  filteredActivities = [...activities];
+  pickRandomActivities();
+}
+</script>
+
+</body>
+</html>
+
