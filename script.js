@@ -1,90 +1,56 @@
-const typeTags = [
-  "OPENING","INTRODUCE","PRE-ASSESSMENT","READ",
-  "ANALYZE","REVIEW","EVALUATE","FORMATIVE",
-  "SUMMATIVE","CLOSING"
-];
-const genreTags = [
-  "READ","VOCABULARY","WRITING (Short)",
-  "WRITING (creative)","Visual Art"
-];
-const miscTags = [
-  "On Your Feet","Home Connection",
-  "Games","Ice Breaker","Making Groups"
-];
+let activities = [];
+let selectedTags = new Set();
 
-let allActivities = [];
+const TYPE_TAGS = ["OPENING", "INTRODUCE", "PRE-ASSESSMENT", "READ", "ANALYZE", "REVIEW", "EVALUATE", "FORMATIVE", "SUMMATIVE", "CLOSING"];
+const GENRE_TAGS = ["READ", "VOCABULARY", "WRITING (Short)", "WRITING (creative)", "Visual Art"];
+const MISC_TAGS = ["On Your Feet", "Home Connection", "Games", "Ice Breaker", "Making Groups"];
 
-// Load JSON
 async function loadActivities() {
-  const res = await fetch("activities.json");
-  allActivities = await res.json();
-  buildFilters();
-  renderActivities(allActivities);
+  try {
+    const res = await fetch("activities.json");
+    activities = await res.json();
+    buildFilters();
+    displayActivities(activities);
+  } catch (err) {
+    console.error("Error loading activities:", err);
+  }
 }
 
-// Build filters
 function buildFilters() {
-  const typeContainer = document.getElementById("typeFilters");
-  const genreContainer = document.getElementById("genreFilters");
-  const miscContainer = document.getElementById("miscFilters");
+  const typeDiv = document.getElementById("typeFilters");
+  const genreDiv = document.getElementById("genreFilters");
+  const miscDiv = document.getElementById("miscFilters");
 
-  function makeCheckbox(tag, container, category) {
-    const id = `${category}-${tag}`;
-    const div = document.createElement("div");
-    div.classList.add("checkbox-item");
-    div.innerHTML = `
-      <input type="checkbox" id="${id}" value="${tag}" data-category="${category}">
-      <label for="${id}">${tag}</label>
-    `;
-    container.appendChild(div);
+  const allTags = new Set(activities.flatMap(a => a.tags));
+
+  function makeTile(tag, container) {
+    const tile = document.createElement("div");
+    tile.className = "filter-tile";
+    tile.textContent = tag;
+    tile.addEventListener("click", () => {
+      tile.classList.toggle("selected");
+      if (selectedTags.has(tag)) {
+        selectedTags.delete(tag);
+      } else {
+        selectedTags.add(tag);
+      }
+    });
+    container.appendChild(tile);
   }
 
-  typeTags.forEach(tag => makeCheckbox(tag, typeContainer, "type"));
-  genreTags.forEach(tag => makeCheckbox(tag, genreContainer, "genre"));
+  TYPE_TAGS.forEach(tag => makeTile(tag, typeDiv));
+  GENRE_TAGS.forEach(tag => makeTile(tag, genreDiv));
+  MISC_TAGS.forEach(tag => makeTile(tag, miscDiv));
 
-  // misc = fixed + auto-fill from json
-  const extraTags = new Set();
-  allActivities.forEach(a => {
-    if (a.tags) {
-      a.tags.forEach(tag => {
-        if (![...typeTags, ...genreTags, ...miscTags].includes(tag)) {
-          extraTags.add(tag);
-        }
-      });
+  // Put any leftover tags into Misc
+  allTags.forEach(tag => {
+    if (![...TYPE_TAGS, ...GENRE_TAGS, ...MISC_TAGS].includes(tag)) {
+      makeTile(tag, miscDiv);
     }
   });
-
-  [...miscTags, ...extraTags].forEach(tag => makeCheckbox(tag, miscContainer, "misc"));
 }
 
-// Apply filters + search
-function filterActivities() {
-  const searchValue = document.getElementById("searchInput").value.toLowerCase().trim();
-
-  // Collect selected filters
-  const checkedBoxes = [...document.querySelectorAll(".filters input:checked")];
-  const selectedTags = checkedBoxes.map(cb => cb.value);
-
-  const filtered = allActivities.filter(a => {
-    const activityTags = a.tags || [];
-
-    // Must include ALL selected tags (AND logic)
-    const hasAllTags = selectedTags.every(tag => activityTags.includes(tag));
-
-    // Search match in name, description, or tags
-    const matchesSearch =
-      a.name.toLowerCase().includes(searchValue) ||
-      (a.description && a.description.toLowerCase().includes(searchValue)) ||
-      activityTags.some(tag => tag.toLowerCase().includes(searchValue));
-
-    return hasAllTags && (searchValue === "" || matchesSearch);
-  });
-
-  renderActivities(filtered);
-}
-
-// Render activity cards
-function renderActivities(list) {
+function displayActivities(list) {
   const container = document.getElementById("activityList");
   container.innerHTML = "";
 
@@ -93,29 +59,31 @@ function renderActivities(list) {
     return;
   }
 
-  list.forEach(a => {
+  list.forEach(activity => {
     const card = document.createElement("div");
-    card.classList.add("activity-card");
-
-    const tagsHtml = (a.tags || [])
-      .map(tag => `<span class="tag">${tag}</span>`)
-      .join(" ");
-
-    card.innerHTML = `
-      <h4>${a.name}</h4>
-      <p>${a.description || ""}</p>
-      <div class="tags">${tagsHtml}</div>
-    `;
-
+    card.className = "activity-card";
+    card.innerHTML = `<h3>${activity.name}</h3><p>${activity.description}</p>`;
     container.appendChild(card);
   });
 }
 
-// Listeners
-document.getElementById("searchButton").addEventListener("click", filterActivities);
-document.querySelectorAll(".filters").forEach(group => {
-  group.addEventListener("change", filterActivities);
-});
+function applySearch() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = activities.filter(a =>
+    a.name.toLowerCase().includes(query) ||
+    a.tags.some(t => t.toLowerCase().includes(query))
+  );
+  displayActivities(filtered);
+}
 
-// Start
+function applyFilters() {
+  const filtered = activities.filter(a =>
+    [...selectedTags].every(tag => a.tags.includes(tag))
+  );
+  displayActivities(filtered);
+}
+
+document.getElementById("searchButton").addEventListener("click", applySearch);
+document.getElementById("filterButton").addEventListener("click", applyFilters);
+
 loadActivities();
