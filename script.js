@@ -1,50 +1,24 @@
 let activities = [];
 let selectedTags = [];
-let debugStep = 0;
 
-function debug(msg) {
-  debugStep++;
-  const counter = document.getElementById("debugCounter");
-  if (counter) {
-    counter.textContent = `Step ${debugStep}: ${msg}`;
-  }
-  console.log(`DEBUG ${debugStep}: ${msg}`);
-}
+const typeTags = ["INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","CLOSING"];
+const genreTags = ["READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"];
+const miscTags = ["ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"];
 
-// Tag categories for button display only
-const typeTags = [
-  "INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW",
-  "EVALUATE","FORMATIVE","CLOSING"
-];
-const genreTags = [
-  "READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"
-];
-const miscTags = [
-  "ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"
-];
-
+// Load activities
 async function loadActivities() {
-  debug("Starting loadActivities");
-  try {
-    const response = await fetch("activities.json");
-    debug("Fetched activities.json");
-    activities = await response.json();
-    debug(`Loaded ${activities.length} activities`);
-  } catch (e) {
-    debug("Error loading activities.json");
-    console.error(e);
-    return;
-  }
-
-  generateFilters();
+  const response = await fetch("activities.json");
+  activities = await response.json();
+  generateTagButtons();
   displayActivities(activities);
-  debug("Finished initial display");
 }
 
+// Normalize tag for comparison
 function normalizeTag(tag) {
   return tag.trim().toUpperCase();
 }
 
+// Assign category for display only
 function assignCategory(tag) {
   const t = normalizeTag(tag);
   if (typeTags.map(normalizeTag).includes(t)) return "TYPE";
@@ -52,79 +26,75 @@ function assignCategory(tag) {
   return "MISC";
 }
 
-function generateFilters() {
-  debug("Generating filters");
+// Generate filter buttons grouped by TYPE/GENRE/MISC
+function generateTagButtons() {
   const allTags = { TYPE: new Set(), GENRE: new Set(), MISC: new Set() };
-
   activities.forEach(a => {
-    ["TYPE","GENRE","MISC"].forEach(key => {
-      if (a[key]) {
+    ["TYPE","GENRE","Misc"].forEach(key => {
+      if(a[key]) {
         const category = assignCategory(a[key]);
         allTags[category].add(a[key]);
       }
     });
   });
-  debug("Filter sets created");
 
-  // Generate buttons
+  const container = document.getElementById("tagFilters");
+  container.innerHTML = "";
+
   Object.keys(allTags).forEach(cat => {
-    const container = document.getElementById(cat.toLowerCase() + "Filters");
-    if (!container) {
-      debug(`Container for ${cat.toLowerCase()}Filters not found`);
-      return;
-    }
+    const groupDiv = document.createElement("div");
+    groupDiv.classList.add("filter-group");
+    const title = document.createElement("h3");
+    title.textContent = cat.charAt(0) + cat.slice(1).toLowerCase();
+    groupDiv.appendChild(title);
+
     allTags[cat].forEach(tag => {
       const btn = document.createElement("button");
       btn.textContent = tag;
-      btn.classList.add("filter-button");
       btn.addEventListener("click", () => toggleTag(tag, btn));
-      container.appendChild(btn);
+      groupDiv.appendChild(btn);
     });
+
+    container.appendChild(groupDiv);
   });
-  debug("Filter buttons created");
 }
 
+// Toggle tag selection
 function toggleTag(tag, btn) {
   const index = selectedTags.indexOf(tag);
-  if (index > -1) {
-    selectedTags.splice(index, 1);
+  if(index > -1) {
+    selectedTags.splice(index,1);
     btn.classList.remove("selected");
-    debug(`Deselected tag: ${tag}`);
   } else {
     selectedTags.push(tag);
     btn.classList.add("selected");
-    debug(`Selected tag: ${tag}`);
   }
   filterActivities();
 }
 
+// Filter activities based on selected tags and search
 function filterActivities() {
-  debug("Filtering activities");
   const searchInput = document.getElementById("searchInput").value.toLowerCase();
-
   const filtered = activities.filter(a => {
-    // Search input matches name or tags
+    // Collect all tags
+    const tags = [a["TYPE"], a["GENRE"], a["Misc"]].filter(Boolean);
+
+    // Search match
     const matchesSearch =
       a["Activity Name"].toLowerCase().includes(searchInput) ||
-      selectedTags.some(tag => 
-        [a["TYPE"], a["GENRE"], a["MISC"]].some(t => t && t.toUpperCase() === tag.toUpperCase())
-      );
+      tags.some(t => t.toLowerCase().includes(searchInput));
 
-    // Selected tags filter
-    const matchesTags =
-      selectedTags.length === 0 || selectedTags.some(tag =>
-        [a["TYPE"], a["GENRE"], a["MISC"]].includes(tag)
-      );
+    // Tag match
+    const matchesTags = selectedTags.every(tag => tags.includes(tag));
 
     return matchesSearch && matchesTags;
   });
 
-  debug(`Filtered down to ${filtered.length} activities`);
   displayActivities(filtered);
 }
 
+// Display activities as cards
 function displayActivities(list) {
-  debug("Displaying activities");
   const container = document.getElementById("activityList");
   container.innerHTML = "";
 
@@ -132,43 +102,41 @@ function displayActivities(list) {
     const card = document.createElement("div");
     card.classList.add("activity-card");
 
-    // Determine card color by first tag in array
-    let firstTag = a["TYPE"] || a["GENRE"] || a["MISC"];
-    if (firstTag) {
-      card.classList.add(`card-${firstTag.replace(/\s+/g, '-')}`);
+    // Determine color by first tag
+    const firstTag = a["TYPE"] || a["GENRE"] || a["Misc"];
+    if(firstTag) {
+      const safeClass = firstTag.replace(/\s/g, "\\ ");
+      card.classList.add("card-" + safeClass);
     }
 
+    // Title
     const title = document.createElement("h4");
     title.textContent = a["Activity Name"];
     card.appendChild(title);
 
+    // Description
     const desc = document.createElement("p");
     desc.textContent = a["Description"];
     card.appendChild(desc);
 
-    // Show all tags at bottom
-    const tags = [a["TYPE"], a["GENRE"], a["MISC"]].filter(Boolean);
-    if (tags.length > 0) {
-      const tagElem = document.createElement("p");
-      tagElem.textContent = tags.join(" • ");
-      tagElem.style.fontSize = "0.8em";
-      tagElem.style.color = "#888";
-      card.appendChild(tagElem);
-    }
+    // Tags at bottom
+    const tagDiv = document.createElement("div");
+    tagDiv.classList.add("tags");
+    [a["TYPE"], a["GENRE"], a["Misc"]].forEach(t => {
+      if(t) {
+        const span = document.createElement("span");
+        span.textContent = t;
+        tagDiv.appendChild(span);
+      }
+    });
+    card.appendChild(tagDiv);
 
     container.appendChild(card);
   });
-
-  debug(`Displayed ${list.length} activities`);
 }
 
-// Search button triggers filtering
-document.getElementById("searchButton").addEventListener("click", filterActivities);
+// Search input
+document.getElementById("searchInput").addEventListener("input", filterActivities);
 
-// Add debug counter element
-const debugDiv = document.createElement("div");
-debugDiv.id = "debugCounter";
-debugDiv.style.cssText = "position: fixed; top: 10px; right: 10px; background: #fff; border: 1px solid #ccc; padding: 5px 10px; font-family: monospace; z-index: 1000;";
-document.body.appendChild(debugDiv);
-
+// Initial load
 loadActivities();
