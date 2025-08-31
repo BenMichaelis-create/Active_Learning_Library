@@ -1,44 +1,59 @@
+// script.js
 let activities = [];
 let selectedTags = [];
 
+// Category definitions for display only
 const typeTags = ["INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","CLOSING"];
 const genreTags = ["READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"];
 const miscTags = ["ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"];
 
 async function loadActivities() {
-  const response = await fetch("activities.json");
-  activities = await response.json();
-  generateFilters();
-  displayActivities(activities);
+  try {
+    const response = await fetch("activities.json");
+    activities = await response.json();
+    generateFilters();
+    displayActivities(activities);
+  } catch (err) {
+    console.error("Error loading activities:", err);
+  }
 }
 
+// Normalize tags to uppercase
 function normalizeTag(tag) {
   return tag.trim().toUpperCase();
 }
 
+// Determine display category for a tag
 function assignCategory(tag) {
   const t = normalizeTag(tag);
-  if (typeTags.map(normalizeTag).includes(t)) return "typeFilters";
-  if (genreTags.map(normalizeTag).includes(t)) return "genreFilters";
-  return "miscFilters";
+  if (typeTags.map(normalizeTag).includes(t)) return "TYPE";
+  if (genreTags.map(normalizeTag).includes(t)) return "GENRE";
+  return "Misc";
 }
 
+// Generate buttons for each category
 function generateFilters() {
-  const allTags = { typeFilters: new Set(), genreFilters: new Set(), miscFilters: new Set() };
+  const containerMap = {
+    TYPE: document.getElementById("typeFilters"),
+    GENRE: document.getElementById("genreFilters"),
+    Misc: document.getElementById("miscFilters")
+  };
 
+  // Clear old buttons
+  Object.values(containerMap).forEach(c => c.innerHTML = "");
+
+  // Collect unique tags per category
+  const tagsPerCategory = { TYPE: new Set(), GENRE: new Set(), Misc: new Set() };
   activities.forEach(a => {
-    ["TYPE","GENRE","Misc"].forEach(key => {
-      if (a[key]) {
-        const category = assignCategory(a[key]);
-        allTags[category].add(a[key].toUpperCase());
-      }
+    Object.keys(tagsPerCategory).forEach(cat => {
+      if (a[cat]) tagsPerCategory[cat].add(normalizeTag(a[cat]));
     });
   });
 
-  Object.keys(allTags).forEach(cat => {
-    const container = document.getElementById(cat);
-    container.innerHTML = "";
-    allTags[cat].forEach(tag => {
+  // Generate buttons
+  Object.keys(tagsPerCategory).forEach(cat => {
+    const container = containerMap[cat];
+    tagsPerCategory[cat].forEach(tag => {
       const btn = document.createElement("button");
       btn.textContent = tag;
       btn.classList.add("filter-button");
@@ -57,19 +72,27 @@ function generateFilters() {
   });
 }
 
+// Filter activities based on search and selected tags
 function filterActivities() {
   const searchInput = document.getElementById("searchInput").value.toLowerCase();
 
   const filtered = activities.filter(a => {
     const matchesSearch =
       a["Activity Name"].toLowerCase().includes(searchInput) ||
-      ["TYPE","GENRE","Misc"].some(k => a[k].toLowerCase().includes(searchInput));
+      (a["TYPE"] && a["TYPE"].toLowerCase().includes(searchInput)) ||
+      (a["GENRE"] && a["GENRE"].toLowerCase().includes(searchInput)) ||
+      (a["Misc"] && a["Misc"].toLowerCase().includes(searchInput));
 
-    const matchesTags =
-      selectedTags.length === 0 ||
-      selectedTags.some(tag =>
-        ["TYPE","GENRE","Misc"].some(k => normalizeTag(a[k]) === tag)
-      );
+    // If no tags are selected, include all
+    if (selectedTags.length === 0) return matchesSearch;
+
+    // Otherwise, at least one selected tag must be present
+    const activityTags = [
+      normalizeTag(a["TYPE"] || ""),
+      normalizeTag(a["GENRE"] || ""),
+      normalizeTag(a["Misc"] || "")
+    ];
+    const matchesTags = selectedTags.every(tag => activityTags.includes(tag));
 
     return matchesSearch && matchesTags;
   });
@@ -77,6 +100,7 @@ function filterActivities() {
   displayActivities(filtered);
 }
 
+// Display activity cards
 function displayActivities(list) {
   const container = document.getElementById("activityList");
   container.innerHTML = "";
@@ -85,47 +109,52 @@ function displayActivities(list) {
     const card = document.createElement("div");
     card.classList.add("activity-card");
 
-    // Determine color based on first tag
-    const firstTag = [a["TYPE"], a["GENRE"], a["Misc"]].find(Boolean);
-    let tagColor = "#ecf0f1"; // default gray
-    if (firstTag) {
-      switch(firstTag.toUpperCase()) {
-        case "READ": tagColor="#ffe0e0"; break;
-        case "VOCABULARY": tagColor="#e0f7ff"; break;
-        case "WRITING": tagColor="#fff3e0"; break;
-        case "CREATIVE WRITING": tagColor="#fce4ec"; break;
-        case "VISUAL ART": tagColor="#e0ffe0"; break;
-        case "INTRODUCE": tagColor="#fce4ec"; break;
-        case "ANALYZE": tagColor="#f3e5f5"; break;
-        case "PRE-ASSESSMENT": tagColor="#fff9c4"; break;
-        case "FORMATIVE": tagColor="#c8e6c9"; break;
-        case "REVIEW": tagColor="#b3e5fc"; break;
-        case "EVALUATE": tagColor="#ffccbc"; break;
-        case "SUMMATIVE": tagColor="#d1c4e9"; break;
-        case "CLOSING": tagColor="#f0f4c3"; break;
-        default: tagColor="#ecf0f1";
-      }
-    }
-    card.style.backgroundColor = tagColor;
+    // Determine first tag for color priority: TYPE > GENRE > Misc
+    let colorTag = normalizeTag(a["TYPE"] || "") || normalizeTag(a["GENRE"] || "") || normalizeTag(a["Misc"] || "");
+    card.style.backgroundColor = getTagColor(colorTag);
 
+    // Title
     const title = document.createElement("h4");
     title.textContent = a["Activity Name"];
     card.appendChild(title);
 
+    // Description
     const desc = document.createElement("p");
     desc.textContent = a["Description"];
     card.appendChild(desc);
 
-    const tagText = document.createElement("small");
-    tagText.textContent = [a["TYPE"], a["GENRE"], a["Misc"]].filter(Boolean).join(" • ");
-    tagText.style.color = "#7f8c8d";
-    card.appendChild(tagText);
+    // Tag display
+    const tagDiv = document.createElement("div");
+    tagDiv.classList.add("activity-tags");
+    const tags = [a["TYPE"], a["GENRE"], a["Misc"]].filter(Boolean);
+    tagDiv.textContent = tags.join(" • ");
+    card.appendChild(tagDiv);
 
     container.appendChild(card);
   });
 }
 
-// Search updates automatically as you type
-document.getElementById("searchInput").addEventListener("input", filterActivities);
+// Simple color mapping for tags
+function getTagColor(tag) {
+  const colors = {
+    "READ": "#ffe0e0",
+    "VOCABULARY": "#e0f7ff",
+    "WRITING": "#fff3e0",
+    "CREATIVE WRITING": "#f0f4c3",
+    "VISUAL ART": "#e0ffe0",
+    "INTRODUCE": "#fce4ec",
+    "PRE-ASSESSMENT": "#fff9c4",
+    "ANALYZE": "#f3e5f5",
+    "REVIEW": "#b3e5fc",
+    "EVALUATE": "#ffccbc",
+    "FORMATIVE": "#c8e6c9",
+    "CLOSING": "#f0f4c3",
+    "SUMMATIVE": "#d1c4e9"
+  };
+  return colors[tag] || "#ecf0f1"; // default light gray
+}
+
+// Search button event
+document.getElementById("searchButton").addEventListener("click", filterActivities);
 
 loadActivities();
