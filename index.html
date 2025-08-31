@@ -127,7 +127,16 @@ function resetTags() {
   pickRandomActivities();
 }
 </script>
+<script>
+fetch('activities.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // This will print your activities to the browser console
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+</script>
 
 </body>
 </html>
+
 
