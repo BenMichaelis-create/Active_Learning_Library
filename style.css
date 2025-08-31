@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -30,26 +30,11 @@ h1 {
   border: 1px solid #ccc;
 }
 
-.search-bar button {
-  margin-left: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  background-color: #3498db;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.search-bar button:hover {
-  background-color: #2980b9;
-}
-
 .filters {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .filter-group h3 {
@@ -57,8 +42,7 @@ h1 {
   color: #34495e;
 }
 
-.filter-group button,
-#tagFilters button {
+.filter-group button {
   margin: 3px;
   padding: 5px 10px;
   border: 1px solid #3498db;
@@ -68,33 +52,30 @@ h1 {
   transition: all 0.2s;
 }
 
-.filter-group button.selected,
-#tagFilters button.selected {
+.filter-group button.selected {
   background-color: #3498db;
   color: white;
 }
 
-.filter-group button:hover,
-#tagFilters button:hover {
+.filter-group button:hover {
   transform: scale(1.1);
 }
 
 .activity-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 15px;
 }
 
 .activity-card {
   border-radius: 15px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s;
 }
 
 .activity-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .activity-card h4 {
@@ -103,28 +84,11 @@ h1 {
 }
 
 .activity-card p {
-  margin: 10px 0;
-  color: #333;
+  margin-bottom: 10px;
 }
 
-.activity-tags {
+.activity-card small {
+  display: block;
   margin-top: 10px;
-  font-size: 12px;
-  color: #777;
+  color: #7f8c8d;
 }
-
-/* Card colors based on first tag */
-.card-READ { background-color: #ffe0e0; }
-.card-VOCABULARY { background-color: #e0f7ff; }
-.card-WRITING { background-color: #fff3e0; }
-.card-CREATIVE-WRITING { background-color: #fce4ec; }
-.card-VISUAL-ART { background-color: #e0ffe0; }
-.card-INTRODUCE { background-color: #fce4ec; }
-.card-ANALYZE { background-color: #f3e5f5; }
-.card-PRE-ASSESSMENT { background-color: #fff9c4; }
-.card-FORMATIVE { background-color: #c8e6c9; }
-.card-REVIEW { background-color: #b3e5fc; }
-.card-EVALUATE { background-color: #ffccbc; }
-.card-CLOSING { background-color: #f0f4c3; }
-.card-SUMMATIVE { background-color: #d1c4e9; }
-
