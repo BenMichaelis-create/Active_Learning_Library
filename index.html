@@ -65,11 +65,20 @@ tags.forEach(tag => {
   tagContainer.appendChild(btn);
 });
 
-// Load activities JSON
+// Load activities JSON and convert to expected structure
 fetch('activities.json')
   .then(res => res.json())
   .then(data => {
-    activities = data;
+    // Convert your JSON into the structure JS expects
+    activities = data.map(a => ({
+      title: a["Activity Name"],
+      description: a["Description"],
+      tags: [
+        ...(a["Stage (Layer 1)"] ? a["Stage (Layer 1)"].split(" / ") : []),
+        ...(a["Genre/Production (Layer 2/3)"] ? a["Genre/Production (Layer 2/3)"].split(" / ") : []),
+        ...(a["Miscellaneous Tags"] && a["Miscellaneous Tags"] !== "-" ? a["Miscellaneous Tags"].split(",").map(t => t.trim()) : [])
+      ]
+    }));
     filteredActivities = [...activities];
     pickRandomActivities();
   })
@@ -138,5 +147,6 @@ fetch('activities.json')
 
 </body>
 </html>
+
 
 
