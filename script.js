@@ -1,13 +1,13 @@
 // script.js
 let activities = [];
-let selectedTags = { Type: [], Genre: [], Misc: [] };
+let selectedTags = { TYPE: [], GENRE: [], MISC: [] };
 
 const typeTags = [
   "INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW",
   "EVALUATE","FORMATIVE","CLOSING"
 ];
 const genreTags = [
-  "READ","VOCABULARY","WRITING"," CREATIVE WRITING","VISUAL ART"
+  "READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"
 ];
 const miscTags = [
   "ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"
@@ -26,16 +26,16 @@ function normalizeTag(tag) {
 
 function assignCategory(tag) {
   const t = normalizeTag(tag);
-  if (typeTags.map(normalizeTag).includes(t)) return "Type";
-  if (genreTags.map(normalizeTag).includes(t)) return "Genre";
-  return "Misc";
+  if (typeTags.map(normalizeTag).includes(t)) return "TYPE";
+  if (genreTags.map(normalizeTag).includes(t)) return "GENRE";
+  return "MISC";
 }
 
 function generateFilters() {
-  const allTags = { Type: new Set(), Genre: new Set(), Misc: new Set() };
+  const allTags = { TYPE: new Set(), GENRE: new Set(), MISC: new Set() };
 
   activities.forEach(a => {
-    ["TYPE","GENRE","Misc"].forEach(key => {
+    ["TYPE","GENRE","MISC"].forEach(key => {
       if (a[key]) {
         const category = assignCategory(a[key]);
         allTags[category].add(a[key]);
@@ -76,14 +76,14 @@ function filterActivities() {
       a["Activity Name"].toLowerCase().includes(searchInput) ||
       (a["TYPE"] && a["TYPE"].toLowerCase().includes(searchInput)) ||
       (a["GENRE"] && a["GENRE"].toLowerCase().includes(searchInput)) ||
-      (a["Misc"] && a["Misc"].toLowerCase().includes(searchInput));
+      (a["MISC"] && a["MISC"].toLowerCase().includes(searchInput));
 
     const matchesType =
       selectedTags.Type.length === 0 || selectedTags.Type.includes(a["TYPE"]);
     const matchesGenre =
       selectedTags.Genre.length === 0 || selectedTags.Genre.includes(a["GENRE"]);
     const matchesMisc =
-      selectedTags.Misc.length === 0 || selectedTags.Misc.includes(a["Misc"]);
+      selectedTags.Misc.length === 0 || selectedTags.Misc.includes(a["MISC"]);
 
     return matchesSearch && matchesType && matchesGenre && matchesMisc;
   });
