@@ -1,93 +1,56 @@
 let activities = [];
-let selectedTags = [];
+let selectedTags = new Set(); // store all selected tags
 
-// Tag categories for display purposes only
-const typeTags = ["INTRODUCE","PRE-ASSESSMENT","READ","ANALYZE","REVIEW","EVALUATE","FORMATIVE","CLOSING"];
-const genreTags = ["READ","VOCABULARY","WRITING","CREATIVE WRITING","VISUAL ART"];
-const miscTags = ["ON YOUR FEET","HOME WORK","GAMES","ICE BREAKER","MAKING GROUPS"];
-
-// Map tags to colors
-const tagColors = {
-  "INTRODUCE":"#fce4ec","PRE-ASSESSMENT":"#fff9c4","READ":"#ffe0e0","ANALYZE":"#f3e5f5",
-  "REVIEW":"#b3e5fc","EVALUATE":"#ffccbc","FORMATIVE":"#c8e6c9","CLOSING":"#f0f4c3",
-  "VOCABULARY":"#e0f7ff","WRITING":"#fff3e0","CREATIVE WRITING":"#fff8e1","VISUAL ART":"#e0ffe0",
-  "ON YOUR FEET":"#ffdede","HOME WORK":"#deffe0","GAMES":"#e0deff","ICE BREAKER":"#fff0de","MAKING GROUPS":"#f0e0ff"
-};
-
-// Utility to normalize tags
-function normalizeTag(tag) {
-  return tag ? tag.trim().toUpperCase() : "";
-}
-
-// Load activities and initialize filters
 async function loadActivities() {
   const response = await fetch("activities.json");
   activities = await response.json();
-  generateFilters();
+  generateTagButtons();
   displayActivities(activities);
 }
 
-// Generate filter buttons under categories
-function generateFilters() {
-  const categories = {TYPE:typeTags, GENRE:genreTags, MISC:miscTags};
-  const container = document.getElementById("tagFilters");
-  container.innerHTML = "";
+function generateTagButtons() {
+  const allTags = new Set();
 
-  Object.keys(categories).forEach(cat => {
-    const heading = document.createElement("h4");
-    heading.textContent = cat;
-    container.appendChild(heading);
-
-    categories[cat].forEach(tag => {
-      const btn = document.createElement("button");
-      btn.textContent = tag;
-      btn.classList.add("filter-button");
-      btn.addEventListener("click", () => {
-        toggleTag(tag, btn);
-      });
-      container.appendChild(btn);
+  activities.forEach(a => {
+    ["TYPE", "GENRE", "Misc"].forEach(key => {
+      if (a[key]) allTags.add(a[key].trim());
     });
+  });
+
+  const container = document.getElementById("tagFilters");
+  allTags.forEach(tag => {
+    const btn = document.createElement("button");
+    btn.textContent = tag;
+    btn.classList.add("filter-button");
+    btn.addEventListener("click", () => {
+      if (selectedTags.has(tag)) {
+        selectedTags.delete(tag);
+        btn.classList.remove("selected");
+      } else {
+        selectedTags.add(tag);
+        btn.classList.add("selected");
+      }
+      filterActivities();
+    });
+    container.appendChild(btn);
   });
 }
 
-// Toggle tag selection
-function toggleTag(tag, btn) {
-  const i = selectedTags.indexOf(tag);
-  if (i > -1) {
-    selectedTags.splice(i,1);
-    btn.classList.remove("selected");
-  } else {
-    selectedTags.push(tag);
-    btn.classList.add("selected");
-  }
-  filterActivities();
-}
-
-// Filter activities based on search input and selected tags
 function filterActivities() {
-  const searchInput = document.getElementById("searchInput").value.trim().toUpperCase();
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
 
   const filtered = activities.filter(a => {
-    const activityTags = [
-      normalizeTag(a["TYPE"]),
-      normalizeTag(a["GENRE"]),
-      normalizeTag(a["Misc"])
-    ];
-
-    // Matches search input in name or any tag
-    const matchesSearch = a["Activity Name"].toUpperCase().includes(searchInput) ||
-      activityTags.some(tag => tag.includes(searchInput));
-
-    // Matches all selected tags
-    const matchesTags = selectedTags.every(tag => activityTags.includes(tag));
-
-    return matchesSearch && matchesTags;
+    const tags = ["TYPE","GENRE","Misc"].map(k => a[k].trim());
+    const matchesTags = selectedTags.size === 0 || Array.from(selectedTags).every(t => tags.includes(t));
+    const matchesSearch = a["Activity Name"].toLowerCase().includes(searchInput) ||
+                          a["Description"].toLowerCase().includes(searchInput) ||
+                          tags.some(tag => tag.toLowerCase().includes(searchInput));
+    return matchesTags && matchesSearch;
   });
 
   displayActivities(filtered);
 }
 
-// Display activities
 function displayActivities(list) {
   const container = document.getElementById("activityList");
   container.innerHTML = "";
@@ -96,10 +59,9 @@ function displayActivities(list) {
     const card = document.createElement("div");
     card.classList.add("activity-card");
 
-    // Determine color from first non-empty tag
-    const firstTag = [a["TYPE"], a["GENRE"], a["Misc"]].find(t => t);
-    const color = tagColors[normalizeTag(firstTag)] || "#ecf0f1";
-    card.style.backgroundColor = color;
+    // Color by first tag (TYPE > GENRE > Misc)
+    const firstTag = a["TYPE"] || a["GENRE"] || a["Misc"];
+    card.style.backgroundColor = getTagColor(firstTag);
 
     const title = document.createElement("h4");
     title.textContent = a["Activity Name"];
@@ -109,19 +71,44 @@ function displayActivities(list) {
     desc.textContent = a["Description"];
     card.appendChild(desc);
 
-    const tagsDiv = document.createElement("div");
-    tagsDiv.classList.add("activity-tags");
-    const tagList = [a["TYPE"], a["GENRE"], a["Misc"]].filter(t=>t);
-    tagsDiv.textContent = tagList.join(" | ");
-    card.appendChild(tagsDiv);
+    const tagLine = document.createElement("p");
+    tagLine.textContent = ["TYPE","GENRE","Misc"].map(k => a[k]).filter(Boolean).join(" | ");
+    tagLine.style.fontSize = "12px";
+    tagLine.style.color = "#777";
+    card.appendChild(tagLine);
 
     container.appendChild(card);
   });
 }
 
-// Event listeners
+function getTagColor(tag) {
+  const colors = {
+    "READ": "#ffe0e0",
+    "VOCABULARY": "#e0f7ff",
+    "WRITING": "#fff3e0",
+    "CREATIVE WRITING": "#e0ffe0",
+    "VISUAL ART": "#fce4ec",
+    "INTRODUCE": "#fce4ec",
+    "PRE-ASSESSMENT": "#fff9c4",
+    "ANALYZE": "#f3e5f5",
+    "EVALUATE": "#ffccbc",
+    "FORMATIVE": "#c8e6c9",
+    "REVIEW": "#b3e5fc",
+    "SUMMATIVE": "#d1c4e9",
+    "CLOSING": "#f0f4c3",
+    "ON YOUR FEET": "#ffe0b2",
+    "HOME WORK": "#d7ccc8",
+    "GAMES": "#c5cae9",
+    "ICE BREAKER": "#f8bbd0",
+    "MAKING GROUPS": "#b2dfdb"
+  };
+  return colors[tag] || "#ecf0f1"; // default gray
+}
+
+// Search button
 document.getElementById("searchButton").addEventListener("click", filterActivities);
+
+// Optional: filter as you type
 document.getElementById("searchInput").addEventListener("input", filterActivities);
 
 loadActivities();
-
