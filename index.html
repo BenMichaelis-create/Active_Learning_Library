@@ -1,14 +1,47 @@
-{
-    "Activity Name": "Exam Evaluations",
-    "Description": "Students explain what they are learning from exams, and evaluate the fairness, usefulness, and quality of tests",
-    "TYPE": "EVALUATE",
-    "GENRE": "WRITING",
-    "Misc": "EVALUATE"
-  },
-  {
-    "Activity Name": "Writing Fables",
-    "Description": "Students write an animal fable (or at least sketch its outline) that will lead to a one-sentence moral matching the current concept discussed in class. May be done verbally instead",
-    "TYPE": "EVALUATE",
-    "GENRE": "CREATIVE WRITING",
-    "Misc": "EVALUATE"
-  },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Learning Strategies</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Active Learning Strategies</h1>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search activities or tags..." />
+      <button id="searchButton">Go</button>
+    </div>
+
+    <!-- Tag Filters -->
+    <div class="filters">
+      <h3>Filter by Tags</h3>
+      <div class="filter-category">
+        <h4>Type</h4>
+        <div id="typeFilters" class="filter-group"></div>
+      </div>
+      <div class="filter-category">
+        <h4>Genre</h4>
+        <div id="genreFilters" class="filter-group"></div>
+      </div>
+      <div class="filter-category">
+        <h4>Misc</h4>
+        <div id="miscFilters" class="filter-group"></div>
+      </div>
+    </div>
+
+    <!-- Activity Results -->
+    <div id="activityList" class="activity-list"></div>
+  </div>
+
+  <!-- Debug Counter -->
+  <div id="debugCounter" style="position: fixed; top: 10px; right: 10px; background: #fff; border: 1px solid #ccc; padding: 5px 10px; font-family: monospace; z-index: 1000;">
+    Step 0: Starting
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
